@@ -1,0 +1,12 @@
+module.exports = {
+  SEND_EMAIL: process.env.SEND_EMAIL,
+  SEND_EMAIL_PASS: process.env.SEND_EMAIL_PASS,
+  REC_EMAIL: process.env.REC_EMAIL,
+  GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
+  GOOGLE_SECRET: process.env.GOOGLE_SECRET,
+  GOOGLE_REFRESH: process.env.GOOGLE_REFRESH,
+  GOOGLE_ACCESS: process.env.GOOGLE_ACCESS,
+  DATABASE_USER: process.env.DATABASE_USER,
+  DATABASE_PASSWORD: process.env.DATABASE_PASSWORD,
+  DATABASE_HOST: process.env.DATABASE_HOST
+};
