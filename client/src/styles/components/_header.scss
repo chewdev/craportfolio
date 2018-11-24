@@ -1,0 +1,126 @@
+.header {
+  padding-top: 0.5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99999;
+}
+
+.header-spacing {
+  height: 6rem;
+  width: 100%;
+}
+
+.header__tape {
+  width: 80%;
+  height: 2.5rem;
+  margin-top: -1.25rem;
+  background: url("./imgs/tape-horizontal.png");
+  background-size: contain;
+
+  &--top-left {
+    animation: moveInTopLeft 3s ease-out;
+  }
+
+  &--middle {
+    animation: moveInTop 3s ease-out;
+  }
+
+  &--top-right {
+    animation: moveInTopRight 3s ease-out;
+  }
+}
+
+.header__content {
+  font-family: "Indie Flower", cursive;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: $s-size 0;
+  width: 100%;
+}
+
+.header__title {
+  width: 4rem;
+  height: 4.5rem;
+  background: url("./imgs/notebook-page-transparent-small.jpg");
+  background-size: cover;
+  border-radius: 5px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  position: fixed;
+  top: 0.5rem;
+  right: calc(20% - 2rem);
+  transition: right 0.4s ease-in, top 0.4s ease-in, transform 0.4s ease-in;
+
+  &_animate {
+    animation: fadeIn 1.5s ease-in;
+  }
+
+  &-div {
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+  }
+
+  @media (max-width: 400px) {
+    transform: scale(0.8);
+  }
+
+  &:hover {
+    cursor: pointer;
+    transform: translateY(0.5rem);
+  }
+
+  &:nth-of-type(2) {
+    right: calc(40% - 2rem);
+  }
+  &:nth-of-type(3) {
+    right: calc(60% - 2rem);
+  }
+
+  &:nth-of-type(4) {
+    right: calc(80% - 2rem);
+  }
+
+  h3 {
+    margin: 0 auto;
+    color: lighten(#002f6c, 15%);
+    color: $main-blue;
+  }
+
+  &_hide {
+    top: 0.25rem;
+    position: fixed;
+    right: 0.25rem;
+    transform: scale(0.6);
+
+    &:hover {
+      transform: scale(0.6);
+    }
+    // margin-left: auto;
+    // margin-right: 0;
+    // transform: translateX(400%);
+
+    &:nth-of-type(2),
+    &:nth-of-type(3),
+    &:nth-of-type(4) {
+      right: 0.25rem;
+    }
+  }
+
+  &_dnone {
+    display: none;
+  }
+}
+
+.bigger-arrow {
+  font-size: 2rem;
+}
+
+.medium-arrow {
+  font-size: 1rem;
+}
