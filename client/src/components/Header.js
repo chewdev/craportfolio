@@ -7,6 +7,7 @@ class Header extends React.Component {
 
     this.eventAdded = null;
     this.yLoc = 0;
+    this.openTimeout = null;
 
     this.state = {
       isOpen: true,
@@ -32,10 +33,21 @@ class Header extends React.Component {
     if (this.state.isOpen && window.pageYOffset < 25) {
       return;
     } else if (window.pageYOffset < 25) {
-      this.setState({
-        hideClass: "header__title_hide"
-      });
-      setTimeout(() => this.setState({ isOpen: true }), 50);
+      if (this.state.hideClass !== "header__title_hide") {
+        this.setState({
+          hideClass: "header__title_hide"
+        });
+      }
+      if (this.openTimeout !== null) {
+        clearTimeout(this.openTimeout);
+      }
+
+      this.openTimeout = setTimeout(() => {
+        if (!this.state.isOpen) {
+          this.setState({ isOpen: true });
+        }
+        this.OpenTimeout = null;
+      }, 25);
       return;
     } else if (
       window.pageYOffset - this.yLoc < 20 &&
@@ -107,11 +119,19 @@ class Header extends React.Component {
                 )}
                 onClick={() => {
                   if (!this.state.isOpen) {
-                    this.setState({
-                      hideClass: "header__title_hide"
-                    });
+                    if (this.state.hideClass !== "header__title_hide") {
+                      this.setState({
+                        hideClass: "header__title_hide"
+                      });
+                    }
                     const that = this;
-                    setTimeout(() => that.setState({ isOpen: true }), 50);
+                    if (this.openTimeout !== null) {
+                      clearTimeout(this.openTimeout);
+                    }
+                    this.openTimeout = setTimeout(() => {
+                      that.setState({ isOpen: true });
+                      that.openTimeout = null;
+                    }, 25);
                   }
                 }}
               >
