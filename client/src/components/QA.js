@@ -181,9 +181,12 @@ class QA extends React.Component {
                     key={obj.question}
                   >
                     <li key={obj.question} className="question-option">
-                      <a onClick={() => this.getAnswer(obj.question)}>
+                      <button
+                        className="question-option-button"
+                        onClick={() => this.getAnswer(obj.question)}
+                      >
                         {obj.question}
-                      </a>
+                      </button>
                       <br />
                     </li>
                   </Typist>
