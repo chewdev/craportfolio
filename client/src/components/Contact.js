@@ -151,7 +151,6 @@ export default class Contact extends React.Component {
       })
       .then(res => {
         const { data } = res;
-        console.log(res);
         // If successful request/response, but data sent was not accepted
         if (!data.accepted) {
           // If contact form hasn't been hidden, cancel timeout and don't hide form
@@ -173,7 +172,6 @@ export default class Contact extends React.Component {
         }
       })
       .catch(error => {
-        console.log(error);
         // If there's an error, cancel hiding of form in timeout and show submit error
         if (this.timeout) {
           clearTimeout(this.timeout);
