@@ -323,7 +323,12 @@ class Projects extends React.Component {
       <div className="project-tv-remote-container">
         <div className="project-container">
           {this.state.tvDisplayType === "image" ? (
-            <a className="project-link" href={project.link} target="_blank">
+            <a
+              className="project-link"
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img
                 className="project-tv"
                 src={project.imgSrc}
