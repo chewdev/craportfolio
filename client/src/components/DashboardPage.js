@@ -5,12 +5,10 @@ import AboutMe from "./AboutMe";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import Footer from "./Footer";
-import Walker from "./Walker";
 import LazyLoad from "react-lazy-load";
 
 const DashboardPage = () => (
   <div id="top-level">
-    {/* <Walker />  */}
     <div className="background-div">
       <Header />
       <div className="box-layout">
