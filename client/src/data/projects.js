@@ -4,12 +4,58 @@ import indecisionApp from "../components/imgs/indecision-app.jpg";
 import colorGuessingGame from "../components/imgs/color-guessing-game.jpg";
 import devConnector from "../components/imgs/developerconnectornew.jpg";
 import passion from "../components/imgs/passion.jpg";
-import goodDay from "../components/imgs/good-day.jpg";
 import nowBrewing from "../components/imgs/now-brewing.jpg";
-import portfolio from "../components/imgs/portfolio.jpg";
+import portfolio from "../components/imgs/portfolioAboutMe.jpg";
 import liveWorkCreate from "../components/imgs/live-work-create.jpg";
+import covenantJobTracker from "../components/imgs/covenantjobtrackeraddproject.jpg";
 
 const projects = [
+  {
+    imgSrc: portfolio,
+    alt: "Screenshot of this portfolio's homepage",
+    title: "Portfolio",
+    description:
+      "This site was built from scratch using Node, React, Express and MySQL. I built a strong foundation in responsive web design with HTML and CSS while developing this site. Used Google's Gmail API and Nodemailer to connect contact form to email and practiced form validation. Most importantly, this site was essential in building my comfort level with working on the full stack without help or guidance. I designed it, built the frontend and backend from scratch and deployed to Digital Ocean Droplet. Working with a DO Droplet gave me a good experience in learning to SSH into a server, set up an environment and deploy on Ubuntu.",
+    tools: [
+      "Node",
+      "MongoDB",
+      "Express",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "MySQL"
+    ],
+    link: "/",
+    channelName: "CEP"
+  },
+  {
+    imgSrc: covenantJobTracker,
+    alt: "Screenshot of Covenant Job Tracking App",
+    title: "Covenant Job Tracking App",
+    description:
+      "Covenant Job Tracker is a platform for a small company to track, schedule and update projects. Built using the MERN stack, I created this platform from scratch and continue to update as requirements change. Creating MongoDB database schema, adding routes to the Node API backend, designing the dashboard UI and building the client side pages in React are just a few of the aspects that went into building this app. Google's distance matrix API is also implemented to determine that an employee is within range of a project location before allowing employee to check in.",
+    tools: [
+      "React",
+      "Redux",
+      "Node",
+      "Express",
+      "MongoDB",
+      "Bootstrap",
+      "Google API"
+    ],
+    link: "https://lit-spire-35756.herokuapp.com/",
+    channelName: "CJT"
+  },
+  {
+    imgSrc: devConnector,
+    alt: 'Screenshot of Dev Connector App"',
+    title: "Dev Connector App",
+    description:
+      "Dev connector is a full stack application utilizing the MERN stack. Built in Node with Express, the API backend connects the MongoDB database to the frontend React app. Application level state is held in the Redux store. This SPA utilizes React Router for smooth and fast page transitions. Bootstrap styling smooths out the frontend.",
+    tools: ["React", "Redux", "Node", "Express", "MongoDB", "Bootstrap"],
+    link: "https://tranquil-tundra-60568.herokuapp.com/",
+    channelName: "DCA"
+  },
   {
     imgSrc: budgIt,
     alt: "Screenshot of Budg-It project homepage",
@@ -60,34 +106,6 @@ const projects = [
     channelName: "CGG"
   },
   {
-    imgSrc: portfolio,
-    alt: "Screenshot of this portfolio's homepage",
-    title: "Portfolio",
-    description:
-      "This site was built from scratch using Node, React, Express and MySQL. I built a strong foundation in responsive web design with HTML and CSS while developing this site. Used Google's Gmail API and Nodemailer to connect contact form to email and practiced form validation. Most importantly, this site was essential in building my comfort level with working on the full stack without help or guidance. I designed it, built the frontend and backend from scratch and deployed to Digital Ocean Droplet. Working with a DO Droplet gave me a good experience in learning to SSH into a server, set up an environment and deploy on Ubuntu.",
-    tools: [
-      "Node",
-      "MongoDB",
-      "Express",
-      "JavaScript",
-      "HTML5",
-      "CSS3",
-      "MySQL"
-    ],
-    link: "/",
-    channelName: "CEP"
-  },
-  {
-    imgSrc: devConnector,
-    alt: 'Screenshot of Dev Connector App"',
-    title: "Dev Connector App",
-    description:
-      "Dev connector is a full stack application utilizing the MERN stack. Built in Node with Express, the API backend connects the MongoDB database to the frontend React app. Application level state is held in the Redux store. This SPA utilizes React Router for smooth and fast page transitions. Bootstrap styling smooths out the frontend.",
-    tools: ["React", "Redux", "Node", "Express", "MongoDB", "Bootstrap"],
-    link: "https://tranquil-tundra-60568.herokuapp.com/",
-    channelName: "DCA"
-  },
-  {
     imgSrc: nowBrewing,
     alt: 'Sign with text "Now Brewing"',
     title: "Coming Soon",
@@ -95,15 +113,6 @@ const projects = [
     tools: [],
     link: "#",
     channelName: "CS1"
-  },
-  {
-    imgSrc: goodDay,
-    alt: 'Sign with text "today was a good day"',
-    title: "Coming Soon",
-    description: "Always working on new projects. More to come!",
-    tools: [],
-    link: "#",
-    channelName: "CS2"
   },
   {
     imgSrc: passion,
