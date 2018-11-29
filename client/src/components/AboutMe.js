@@ -37,17 +37,17 @@ class AboutMe extends React.Component {
           <div className="about-me-container">
             <h2 className="about-me-header">About Me</h2>
             <p>
-              &nbsp;&nbsp;&nbsp;&nbsp;Software development is more than just a
-              career for me, it's a hobby. I love creating beautiful,
-              interactive websites, overcoming technical challenges and pushing
-              the limits of what is possible. I excel when challenged and strive
-              to learn something new every day.
+              &nbsp;&nbsp;&nbsp;&nbsp; A mechanical engineering graduate turned
+              web developer. I love technical challenges and learning new and
+              exciting technologies. Designing and building is my passion,
+              making your life easier is my goal.{" "}
+              {/*Building software and systems that make lives easier*/}
               <br />
-            </p>
-            <p>
-              &nbsp;&nbsp;&nbsp;&nbsp;When I'm not working on websites or
-              studying new tech, you'll likely find me traveling, at a baseball
-              game or tinkering with Arduino and IoT.
+              <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;When I'm not busy studying web
+              development, I'm tinkering with Arduino and IoT. Outside of tech,
+              I love sports, especially baseball (Let's Go Dodgers!), and
+              traveling.
               <br />
             </p>
             <p className="about-me-quote">
