@@ -2,6 +2,7 @@ import budgIt from "../components/imgs/budg-it.jpg";
 import yelpCamp from "../components/imgs/yelp-camp.jpg";
 import indecisionApp from "../components/imgs/indecision-app.jpg";
 import colorGuessingGame from "../components/imgs/color-guessing-game.jpg";
+import devConnector from "../components/imgs/developerconnectornew.jpg";
 import passion from "../components/imgs/passion.jpg";
 import goodDay from "../components/imgs/good-day.jpg";
 import nowBrewing from "../components/imgs/now-brewing.jpg";
@@ -77,7 +78,7 @@ const projects = [
     channelName: "CEP"
   },
   {
-    imgSrc: "/images/closed.jpg",
+    imgSrc: devConnector,
     alt: 'Screenshot of Dev Connector App"',
     title: "Dev Connector App",
     description:
