@@ -5,7 +5,7 @@ import colorGuessingGame from "../components/imgs/color-guessing-game.jpg";
 import devConnector from "../components/imgs/developerconnectornew.jpg";
 import passion from "../components/imgs/passion.jpg";
 import nowBrewing from "../components/imgs/now-brewing.jpg";
-import portfolio from "../components/imgs/portfolioAboutMe.jpg";
+import portfolio from "../components/imgs/portfolioContact.jpg";
 import liveWorkCreate from "../components/imgs/live-work-create.jpg";
 import covenantJobTracker from "../components/imgs/covenantjobtrackeraddproject.jpg";
 
