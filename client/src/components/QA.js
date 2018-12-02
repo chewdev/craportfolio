@@ -10,8 +10,7 @@ class QA extends React.Component {
       currentText: "",
       textInput: "",
       questionArr: [],
-      qaPlaceholder:
-        "Ask your questions here. Click a suggestion to get the answer or press enter to ask the top suggestion.",
+      qaPlaceholder: "Have a question? Ask it here.",
       hasBeenChanged: false,
       hasBeenAsked: false
     };
@@ -30,16 +29,16 @@ class QA extends React.Component {
     const wordArr = [];
     let count = 0;
     textInput.forEach(word => {
-      if (!wordArr.includes(word)) {
+      if (wordArr.includes(word)) {
+        return;
+      } else {
         wordArr.push(word);
-      }
-    });
-    wordArr.forEach(word => {
-      if (questionArr.includes(word)) {
-        count++;
-      }
-      if (searchArr.includes(word)) {
-        count += 2;
+        if (questionArr.includes(word)) {
+          count++;
+        }
+        if (searchArr.includes(word)) {
+          count += 2;
+        }
       }
     });
     return count;
@@ -57,12 +56,15 @@ class QA extends React.Component {
         qaPlaceholder: "Do you have a question for me?"
       });
     }
-    const textInput = e.target.value.toLowerCase();
+    const textInput = e.target.value;
     if (textInput.length === 0) {
       this.setState({ questionArr: [], textInput });
       return;
     }
-    const textInputArr = textInput.split(" ").filter(word => word !== "");
+    const textInputArr = textInput
+      .toLowerCase()
+      .split(" ")
+      .filter(word => word !== "");
     this.setState(prevState => {
       let items = this.qA.filter(obj =>
         textInputArr.some(
