@@ -1,6 +1,10 @@
 import React from "react";
 import Typist from "react-typist";
 
+const lowerCaseSplit = function(input) {
+  return input.toLowerCase().split(" ");
+};
+
 class QA extends React.Component {
   constructor(props) {
     super(props);
@@ -81,10 +85,10 @@ class QA extends React.Component {
       );
 
       items = items.sort((objA, objB) => {
-        const questionA = objA.question.toLowerCase().split(" ");
-        const searchA = objA.search_terms.toLowerCase().split(" ");
-        const questionB = objB.question.toLowerCase().split(" ");
-        const searchB = objB.search_terms.toLowerCase().split(" ");
+        const questionA = lowerCaseSplit(objA.question);
+        const searchA = lowerCaseSplit(objA.search_terms);
+        const questionB = lowerCaseSplit(objB.question);
+        const searchB = lowerCaseSplit(objB.search_terms);
         let a = this.howManyMatches(questionA, searchA, textInputArr);
         let b = this.howManyMatches(questionB, searchB, textInputArr);
 
