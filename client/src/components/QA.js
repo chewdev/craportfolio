@@ -65,30 +65,23 @@ class QA extends React.Component {
       this.setState({ questionArr: [], textInput });
       return;
     }
-    const textInputArr = textInput
-      .toLowerCase()
-      .split(" ")
-      .filter(word => word !== "");
+    const textInputArr = lowerCaseSplit(textInput).filter(word => word !== "");
     this.setState(prevState => {
       let items = this.qA.filter(obj =>
         textInputArr.some(
           inputWord =>
-            obj.question
-              .toLowerCase()
-              .split(" ")
-              .includes(inputWord) ||
-            obj.search_terms
-              .toLowerCase()
-              .split(" ")
-              .includes(inputWord)
+            lowerCaseSplit(obj.question).includes(inputWord) ||
+            lowerCaseSplit(obj.search_terms).includes(inputWord)
         )
       );
 
       items = items.sort((objA, objB) => {
-        const questionA = lowerCaseSplit(objA.question);
-        const searchA = lowerCaseSplit(objA.search_terms);
-        const questionB = lowerCaseSplit(objB.question);
-        const searchB = lowerCaseSplit(objB.search_terms);
+        const [questionA, searchA, questionB, searchB] = [
+          objA.question,
+          objA.search_terms,
+          objB.question,
+          objB.search_terms
+        ].map(lowerCaseSplit);
         let a = this.howManyMatches(questionA, searchA, textInputArr);
         let b = this.howManyMatches(questionB, searchB, textInputArr);
 
