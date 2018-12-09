@@ -16,6 +16,7 @@ class Projects extends React.Component {
     this.prevProj = this.prevProj.bind(this);
     this.remoteSetInd = this.remoteSetInd.bind(this);
     this.changeAuto = this.changeAuto.bind(this);
+    this.onOpenProject = this.onOpenProject.bind(this);
     this.startInterval = this.startInterval.bind(this);
     this.removeRemoteLightClass = this.removeRemoteLightClass.bind(this);
     this.guide = this.guide.bind(this);
@@ -177,6 +178,12 @@ class Projects extends React.Component {
     this.removeRemoteLightClass();
   }
 
+  onOpenProject() {
+    if (this.state.projIntervalId !== null) {
+      this.changeAuto();
+    }
+  }
+
   guide() {
     this.setState(prevState => {
       const tvDisplayType =
@@ -328,6 +335,7 @@ class Projects extends React.Component {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={this.onOpenProject}
             >
               <img
                 className="project-tv"
