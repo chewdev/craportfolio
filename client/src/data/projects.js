@@ -15,7 +15,7 @@ const projects = [
     alt: "Screenshot of this portfolio's homepage",
     title: "Portfolio",
     description:
-      "This site was built from scratch using Node, React, Express and MySQL. I built a strong foundation in responsive web design with HTML and CSS while developing this site. Used Google's Gmail API and Nodemailer to connect contact form to email and practiced form validation. Most importantly, this site was essential in building my comfort level with working on the full stack without help or guidance. I designed it, built the frontend and backend from scratch and deployed to Digital Ocean Droplet. Working with a DO Droplet gave me a good experience in learning to SSH into a server, set up an environment and deploy on Ubuntu.",
+      "This site is built using Node.js, React, Sass, Express and MySQL. The site is built to be responsive for devices of all sizes. Form validation is implemented on both client and server side and uses an API on the backend to send email. I built this site from scratch on top of the Express framework in Node.js and React framework on the frontend. Designing, building and deploying this application gave me the realization of just how much goes into building even the smallest of custom applications.",
     tools: [
       "Node",
       "MongoDB",
@@ -33,7 +33,7 @@ const projects = [
     alt: "Screenshot of Covenant Job Tracking App",
     title: "Covenant Job Tracking App",
     description:
-      "Covenant Job Tracker is a platform for a small company to track, schedule and update projects. Built using the MERN stack, I created this platform from scratch and continue to update as requirements change. Creating MongoDB database schema, adding routes to the Node API backend, designing the dashboard UI and building the client side pages in React are just a few of the aspects that went into building this app. Google's distance matrix API is also implemented to determine that an employee is within range of a project location before allowing employee to check in.",
+      "Covenant Job Tracker is a platform for a small company to track, schedule and update projects. Built using the MERN stack, I created this platform on top of the Express and React frameworks and continue to update as requirements change. Creating MongoDB database schema, adding routes to the Node API backend, designing the dashboard UI and building the client side pages in React are just a few of the aspects that went into building this app. Google's distance matrix API is also implemented to determine that an employee is within range of a project location before allowing employee to check in.",
     tools: [
       "React",
       "Redux",
@@ -51,7 +51,7 @@ const projects = [
     alt: 'Screenshot of Dev Connector App"',
     title: "Dev Connector App",
     description:
-      "Dev connector is a full stack application utilizing the MERN stack. Built in Node with Express, the API backend connects the MongoDB database to the frontend React app. Application level state is held in the Redux store. This SPA utilizes React Router for smooth and fast page transitions. Bootstrap styling smooths out the frontend.",
+      "Dev connector is a full stack application utilizing the MERN stack. Built in Node with Express, the API backend connects the MongoDB database to the frontend React app. Application level state is held in the Redux store. This SPA utilizes React Router for smooth and fast page transitions. Bootstrap styling smooths out the frontend. This application was built following a course based on the MERN stack by Brad Traversy on Udemy and was extended by me, including fixing issues found while building it.",
     tools: ["React", "Redux", "Node", "Express", "MongoDB", "Bootstrap"],
     link: "https://tranquil-tundra-60568.herokuapp.com/",
     channelName: "DCA"
@@ -61,7 +61,7 @@ const projects = [
     alt: "Screenshot of Budg-It project homepage",
     title: "React Budg-It App",
     description:
-      "Budg-It App is an application allowing users to input expenses and incomes to help determine a budget. Users can login using Google Auth from Firebase in order to store their data in the database and access it later. Utilizied Redux to hold application state in React. Built upon existing skills while building this app including: testing with Jest and Enzyme, working with webpack, using Sass CSS preprocessor, BEM CSS convention, using Firebase, deploying to Heroku and much more.",
+      "Budg-It App is an application allowing users to input expenses and incomes to help determine a budget. Users can login using Google Auth from Firebase in order to store their data in the database and access it later. Redux was used to hold application state in React. Built upon existing skills while building this app including: testing with Jest and Enzyme, working with webpack, using Sass CSS preprocessor, BEM CSS convention, using Firebase, deploying to Heroku and much more. This application was built following a course based on React on Udemy by Andrew Mead. I extended the app to include both incomes and expenses instead of just expenses, added an option to use app without login, changed the styling, and more.",
     tools: ["React", "Redux", "Firebase", "JavaScript (ES6)", "HTML5", "CSS3"],
     link: "https://react-budg-it.herokuapp.com",
     channelName: "RBA"
@@ -90,7 +90,7 @@ const projects = [
     alt: "Screenshot of Indecision App project",
     title: "Indecision App",
     description:
-      "Indecision App is a simple CRUD application that allows a user to add and remove items to a list. User can then allow the app to make a decision for them. This app was built as a basic intro to React and implementing of Local Storage.",
+      "Indecision App is a simple CRUD application that allows a user to add and remove items to a list. User can then allow the app to make a decision for them. This app was built as a basic intro to React and practicing the implementation of Local Storage.",
     tools: ["React", "JavaScript", "HTML5", "CSS3"],
     link: "https://github.com/chewdev/react-indecision-app",
     channelName: "IDA"
