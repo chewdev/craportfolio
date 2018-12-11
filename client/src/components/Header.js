@@ -73,7 +73,7 @@ class Header extends React.Component {
         <div className="header-spacing" />
         <header className="header">
           <div className="content-container">
-            <div className="header__content">
+            <nav className="header__content">
               <a href="#top-level" className={headerTitleClasses}>
                 <div className={headerTapeLeft} />
                 <div className="header__title-div">
@@ -114,7 +114,7 @@ class Header extends React.Component {
                   )}
                 </div>
               </a>
-            </div>
+            </nav>
           </div>
         </header>
       </div>
