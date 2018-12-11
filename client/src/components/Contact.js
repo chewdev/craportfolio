@@ -205,7 +205,7 @@ export default class Contact extends React.Component {
                 </ReactTypist>
               ) : null}
               <form
-                className={`${this.state.formClass}`}
+                className={`contact-form-form ${this.state.formClass}`}
                 onSubmit={this.onSubmit}
               >
                 <h1 className="contact-form-title">Contact</h1>

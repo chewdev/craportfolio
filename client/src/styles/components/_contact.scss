@@ -34,7 +34,9 @@
   border-radius: 0.25rem 0.25rem 0 0;
   background: white;
   height: 27.5rem;
-
+  &-form {
+    width: 100%;
+  }
   &-whiteboard-bottom {
     width: 17.5rem;
     height: 1.5rem;
