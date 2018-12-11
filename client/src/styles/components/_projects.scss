@@ -154,7 +154,6 @@
 .projects-remote-input {
   width: 1rem;
   height: 1rem;
-  background: #555555;
   background: $light-grey;
   border-radius: 0.25rem;
   color: white;
@@ -189,7 +188,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 0.25rem;
-    background: inherit;
+    background: $light-grey;
     border-width: 1px;
     border-color: darken($light-grey, 25%);
     color: #cccccc;
@@ -204,6 +203,7 @@
     &--text {
       font-size: 0.4rem;
       color: white;
+      background: $main-blue;
     }
 
     &--ok {
@@ -212,6 +212,7 @@
       border-radius: 2.5rem;
       text-align: center;
       color: white;
+      background: $main-blue;
     }
   }
 
