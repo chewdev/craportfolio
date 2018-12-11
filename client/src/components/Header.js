@@ -7,7 +7,6 @@ class Header extends React.Component {
 
     this.eventAdded = null;
     this.yLoc = 0;
-    this.openTimeout = null;
 
     this.state = {
       isOpen: true,
@@ -29,25 +28,17 @@ class Header extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    if (this.eventAdded) {
+      window.removeEventListener("scroll", this.onScroll);
+    }
+  }
+
   onScroll() {
     if (this.state.isOpen && window.pageYOffset < 25) {
       return;
     } else if (window.pageYOffset < 25) {
-      if (this.state.hideClass !== "header__title_hide") {
-        this.setState({
-          hideClass: "header__title_hide"
-        });
-      }
-      if (this.openTimeout !== null) {
-        clearTimeout(this.openTimeout);
-      }
-
-      this.openTimeout = setTimeout(() => {
-        if (!this.state.isOpen) {
-          this.setState({ isOpen: true });
-        }
-        this.OpenTimeout = null;
-      }, 25);
+      this.setState({ isOpen: true });
       return;
     } else if (
       window.pageYOffset - this.yLoc < 20 &&
@@ -83,17 +74,7 @@ class Header extends React.Component {
         <header className="header">
           <div className="content-container">
             <div className="header__content">
-              <a
-                href="#top-level"
-                className={headerTitleClasses}
-                onTransitionEnd={e => {
-                  if (e.nativeEvent.propertyName === "top") {
-                    if (!this.state.isOpen) {
-                      this.setState({ hideClass: "header__title_dnone" });
-                    }
-                  }
-                }}
-              >
+              <a href="#top-level" className={headerTitleClasses}>
                 <div className={headerTapeLeft} />
                 <div className="header__title-div">
                   <i className="fas fa-arrow-up medium-arrow" />
@@ -117,21 +98,10 @@ class Header extends React.Component {
                       !this.state.isOpen && this.state.hideClass
                   }
                 )}
-                onClick={() => {
+                onClick={e => {
                   if (!this.state.isOpen) {
-                    if (this.state.hideClass !== "header__title_hide") {
-                      this.setState({
-                        hideClass: "header__title_hide"
-                      });
-                    }
-                    const that = this;
-                    if (this.openTimeout !== null) {
-                      clearTimeout(this.openTimeout);
-                    }
-                    this.openTimeout = setTimeout(() => {
-                      that.setState({ isOpen: true });
-                      that.openTimeout = null;
-                    }, 25);
+                    e.preventDefault();
+                    this.setState({ isOpen: true });
                   }
                 }}
               >
