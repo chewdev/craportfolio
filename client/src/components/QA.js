@@ -134,7 +134,7 @@ class QA extends React.Component {
           id="knowme"
           className={`paper-text ${this.chromeClass} paper-text-mtop`}
           style={{
-            background: "inherit",
+            background: "transparent",
             border: "none",
             fontFamily: "inherit",
             height: "5.6rem",
