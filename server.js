@@ -115,33 +115,9 @@ app.get("*", (req, res) => {
 });
 
 if (process.env.NODE_ENV === "production") {
-  // Certificate
-  const privateKey = fs.readFileSync(
-    "/etc/letsencrypt/live/chewdev.com/privkey.pem",
-    "utf8"
-  );
-  const certificate = fs.readFileSync(
-    "/etc/letsencrypt/live/chewdev.com/cert.pem",
-    "utf8"
-  );
-  const ca = fs.readFileSync(
-    "/etc/letsencrypt/live/chewdev.com/chain.pem",
-    "utf8"
-  );
-
-  const credentials = {
-    key: privateKey,
-    cert: certificate,
-    ca: ca
-  };
   const httpServer = http.createServer(app);
-  const httpsServer = https.createServer(credentials, app);
-  httpServer.listen(80, () => {
-    console.log("HTTP Server running on port 80");
-  });
-
-  httpsServer.listen(443, () => {
-    console.log("HTTPS Server running on port 443");
+  httpServer.listen(port, () => {
+    console.log("HTTP Server running on port " + port);
   });
 } else {
   app.listen(port, () => {
