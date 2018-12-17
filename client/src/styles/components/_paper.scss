@@ -16,16 +16,16 @@
   justify-content: space-between;
 
   &--left {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 1.7rem;
+    height: 3.3rem;
     animation: moveInTopLeft 2s ease-out;
     background: url("./imgs/tape-left-cropped-rot.png");
     background-size: contain;
   }
 
   &--right {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 1.7rem;
+    height: 3.3rem;
     animation: moveInTopRight 2s ease-out;
     background: url("./imgs/tape-right-cropped-rot.png");
     background-size: contain;
@@ -33,7 +33,7 @@
 }
 
 .paper-header {
-  margin: 0.25rem 0 0.6rem 5rem;
+  margin: 0.45rem 0 0.6rem 5rem;
   line-height: 1;
 }
 
