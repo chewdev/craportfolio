@@ -50,14 +50,6 @@ class Introduction extends React.Component {
         <div className="paper-tape">
           <div className="paper-tape--left" />
           <div className="paper-tape--right" />
-          {/* <img
-            className="paper-tape--left"
-            src="/images/tape-left-cropped-rot.png"
-          />
-          <img
-            className="paper-tape--right"
-            src="/images/tape-right-cropped-rot.png"
-          /> */}
         </div>
         <Typist
           avgTypingDelay={30}
