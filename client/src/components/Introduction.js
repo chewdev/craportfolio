@@ -77,5 +77,3 @@ class Introduction extends React.Component {
 }
 
 export default Introduction;
-
-// &nbsp;Full Stack Developer. <br /><br />&nbsp;Currently working with JavaScript, HTML5 and CSS3. <br /> <br />&nbsp;Current Stack: Node, React, Firebase / MongoDB, and Express. <br /> <br />&nbsp; Tools: webpack, Git / GitHub, Sass, Babel, Jest, Enzyme, GraphQL, Redux and more.
