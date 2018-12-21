@@ -1,18 +1,17 @@
-const fs = require("fs");
 const http = require("http");
-const https = require("https");
-
 const path = require("path");
 const express = require("express");
 const app = express();
 const publicPath = path.join(__dirname, "client", "build");
+
 const port = process.env.PORT || 5000;
+
 const {
-  connection,
   checkContactCount,
   addContact,
   getIntroQuestions
 } = require("./dbconnection");
+
 let { sendMail } = require("./mailtransport");
 
 const validateContactInput = require("./validation/contact");
@@ -31,8 +30,6 @@ app.use(function(req, res, next) {
 });
 
 app.use(express.static(publicPath));
-
-app.get("/.well-known/acme-challenge/");
 
 app.post("/contact", (req, res) => {
   let data = {};
