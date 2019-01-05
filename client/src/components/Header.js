@@ -1,5 +1,6 @@
 import React from "react";
 import classnames from "classnames";
+import NavItem from "./NavItem";
 
 class Header extends React.Component {
   constructor(props) {
@@ -74,20 +75,25 @@ class Header extends React.Component {
         <header className="header">
           <div className="content-container">
             <nav className="header__content">
-              <a href="#top-level" className={headerTitleClasses}>
-                <div className={headerTapeLeft} />
-                <div className="header__title-div">
-                  <i className="fas fa-arrow-up medium-arrow" />
-                </div>
-              </a>
-              <a href="#contact" className={headerTitleClasses}>
-                <div className={headerTapeLeft} />
-                <div className="header__title-div">Contact</div>
-              </a>
-              <a href="#projects" className={headerTitleClasses}>
-                <div className={headerTapeMiddle} />
-                <div className="header__title-div">Projects</div>
-              </a>
+              <NavItem
+                hasIcon={true}
+                iconClasses={"fas fa-arrow-up medium-arrow"}
+                headerTapeType={headerTapeLeft}
+                headerTitleClasses={headerTitleClasses}
+                href={"#top-level"}
+              />
+              <NavItem
+                headerTapeType={headerTapeLeft}
+                headerTitleClasses={headerTitleClasses}
+                text={"Contact"}
+                href={"#contact"}
+              />
+              <NavItem
+                headerTapeType={headerTapeMiddle}
+                headerTitleClasses={headerTitleClasses}
+                text={"Projects"}
+                href={"#projects"}
+              />
               <a
                 href={this.state.isOpen ? "#about-me" : null}
                 className={classnames(
