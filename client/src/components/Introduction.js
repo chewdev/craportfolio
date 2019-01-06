@@ -26,9 +26,9 @@ class Introduction extends React.Component {
           this.setState({
             qA: [
               {
-                question: "Why is there no other options for questions?",
+                question: "Why is this the only question available?",
                 answer:
-                  "There was an error retrieving the questions and answers from the database.",
+                  "I must be having trouble with my memory. Please contact me in the contact section below or refresh the page and try again.",
                 search_terms:
                   "why what where how when do you have questions answers who options other more less"
               }
