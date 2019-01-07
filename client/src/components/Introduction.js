@@ -38,12 +38,6 @@ class Introduction extends React.Component {
     }
   }
 
-  scrollContact() {
-    document
-      .querySelector("#contact")
-      .scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-
   render() {
     return (
       <div className="paper-box">
@@ -66,10 +60,9 @@ class Introduction extends React.Component {
           </p>
         </Typist>
         <div className="paper-contact-link-div">
-          <i
-            onClick={this.scrollContact}
-            className="fas fa-chevron-down paper-contact-link"
-          />
+          <a href="#contact" className="paper-contact-link-a">
+            <i className="fas fa-chevron-down paper-contact-link" />
+          </a>
         </div>
       </div>
     );

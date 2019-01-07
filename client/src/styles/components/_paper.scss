@@ -66,7 +66,6 @@
   display: flex;
   justify-content: center;
   position: absolute;
-  bottom: 0.1rem;
 }
 
 .paper-contact-link {
@@ -78,6 +77,12 @@
     cursor: pointer;
     animation: blink 0.7s linear infinite;
   }
+}
+
+.paper-contact-link-a {
+  display: flex;
+  align-items: flex-end;
+  text-decoration: none;
 }
 
 @keyframes blink {
