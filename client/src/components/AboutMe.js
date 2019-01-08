@@ -37,11 +37,11 @@ class AboutMe extends React.Component {
           <div className="about-me-container">
             <h2 className="about-me-header">About Me</h2>
             <p>
-              &nbsp;&nbsp;&nbsp;&nbsp; A mechanical engineering graduate turned
-              web developer. I love technical challenges and learning new and
-              exciting technologies. Designing and building is my passion,
-              making your life easier is my goal.{" "}
-              {/*Building software and systems that make lives easier*/}
+              &nbsp;&nbsp;&nbsp;&nbsp; I'm Chris, a full-stack web developer
+              living in Los Angeles, CA. Having graduated with a degree in
+              Mechanical Engineering, I have always enjoyed solving difficult
+              technical challenges. Designing and building is my passion, making
+              your life easier is my goal.
               <br />
               <br />
               &nbsp;&nbsp;&nbsp;&nbsp;When I'm not busy studying web
