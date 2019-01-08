@@ -56,7 +56,7 @@ class Introduction extends React.Component {
 
           <br />
           <p className={`paper-text ${this.chromeClass}`}>
-            Want to have a real conversation?
+            Have more questions? Contact me
           </p>
         </Typist>
         <div className="paper-contact-link-div">
