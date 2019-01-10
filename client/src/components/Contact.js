@@ -129,18 +129,6 @@ export default class Contact extends React.Component {
       this.timeout = null;
     }, 1000);
 
-    // Method to send POST request to server
-    // const postData = (url = ``, data = {}) => {
-    //   return axios.post(url, data).then(data => data.json())
-    //   // return fetch(url, {
-    //   //   method: "POST",
-    //   //   body: JSON.stringify(data),
-    //   //   headers: {
-    //   //     "Content-Type": "application/json"
-    //   //   }
-    //   // }).then(data => data.json());
-    // };
-
     // Send input data from contact form to the POST route of '/contact'
     axios
       .post(`/contact`, {
