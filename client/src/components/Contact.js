@@ -90,19 +90,12 @@ export default class Contact extends React.Component {
     const submittedEmail = e.target.contactemail.value;
     const submittedComments = e.target.comments.value;
     const submittedSelectedOption = e.target.contactpurpose.value;
-    let emailError = false;
-    let hadEmailError = false;
-    let nameError = false;
-    let hadNameError = false;
     // Validate input
-    if (!isEmail(submittedEmail)) {
-      emailError = true;
-      hadEmailError = true;
-    }
-    if (submittedName.length < 1) {
-      nameError = true;
-      hadNameError = true;
-    }
+    let emailError = !isEmail(submittedEmail);
+    let hadEmailError = emailError;
+    let nameError = submittedName.length < 1;
+    let hadNameError = nameError;
+
     // If errors, show errors and return
     if (nameError || emailError) {
       this.setState({ emailError, nameError, hadEmailError, hadNameError });
