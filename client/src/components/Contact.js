@@ -1,8 +1,8 @@
 import React from "react";
 import LazyLoad from "react-lazy-load";
-import ReactTypist from "react-typist";
 import { isEmail } from "validator";
 import axios from "axios";
+import SuccessfulSubmit from "./SuccessfulSubmit";
 
 export default class Contact extends React.Component {
   constructor() {
@@ -174,17 +174,7 @@ export default class Contact extends React.Component {
         <LazyLoad offset={600} throttle={25}>
           <div>
             <div className={`contact-form`}>
-              {this.state.submitted ? (
-                <ReactTypist
-                  avgTypingDelay={30}
-                  stdTypingDelay={15}
-                  cursor={{ show: false }}
-                >
-                  <div className="show-success">
-                    <h2>Successfully submitted. Thank you for reaching out!</h2>
-                  </div>
-                </ReactTypist>
-              ) : null}
+              <SuccessfulSubmit submitted={this.state.submitted} />
               <form
                 className={`contact-form-form ${this.state.formClass}`}
                 onSubmit={this.onSubmit}
