@@ -4,6 +4,7 @@ import { isEmail } from "validator";
 import axios from "axios";
 import SuccessfulSubmit from "./SuccessfulSubmit";
 import SubmitError from "./SubmitError";
+import WhiteboardBottom from "./WhiteboardBottom";
 
 export default class Contact extends React.Component {
   constructor() {
@@ -277,13 +278,7 @@ export default class Contact extends React.Component {
                 />
               </form>
             </div>
-            <div className="contact-form-whiteboard-bottom">
-              <div className="eraser">Expo</div>
-              <div className="marker">
-                <div className="marker-body" />
-                <div className="marker-cap" />
-              </div>
-            </div>
+            <WhiteboardBottom />
           </div>
         </LazyLoad>
       </section>
