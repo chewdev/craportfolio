@@ -3,6 +3,7 @@ import LazyLoad from "react-lazy-load";
 import { isEmail } from "validator";
 import axios from "axios";
 import SuccessfulSubmit from "./SuccessfulSubmit";
+import SubmitError from "./SubmitError";
 
 export default class Contact extends React.Component {
   constructor() {
@@ -164,13 +165,12 @@ export default class Contact extends React.Component {
   render() {
     return (
       <section id="contact" className="contact-section">
-        {this.state.submitError && (
-          <h3 className="contact-error">
-            {this.state.contactError
-              ? this.state.contactError
-              : "There was an error submitting the form, please try again."}
-          </h3>
-        )}
+        {
+          <SubmitError
+            submitError={this.state.submitError}
+            contactError={this.state.contactError}
+          />
+        }
         <LazyLoad offset={600} throttle={25}>
           <div>
             <div className={`contact-form`}>
