@@ -6,6 +6,7 @@ import SuccessfulSubmit from "./SuccessfulSubmit";
 import SubmitError from "./SubmitError";
 import WhiteboardBottom from "./WhiteboardBottom";
 import ContactSelect from "./ContactSelect";
+import EmailError from "./EmailError";
 
 export default class Contact extends React.Component {
   constructor() {
@@ -204,11 +205,7 @@ export default class Contact extends React.Component {
                   <label className="contact-form-label" htmlFor="contactemail">
                     E-mail:
                   </label>
-                  {this.state.emailError ? (
-                    <div className="contact-form-error">
-                      Please input a valid e-mail
-                    </div>
-                  ) : null}
+                  <EmailError error={this.state.emailError} />
                 </div>
                 <div className="contact-form-input-div">
                   <input
