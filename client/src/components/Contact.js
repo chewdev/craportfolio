@@ -5,6 +5,7 @@ import axios from "axios";
 import SuccessfulSubmit from "./SuccessfulSubmit";
 import SubmitError from "./SubmitError";
 import WhiteboardBottom from "./WhiteboardBottom";
+import ContactSelect from "./ContactSelect";
 
 export default class Contact extends React.Component {
   constructor() {
@@ -239,38 +240,10 @@ export default class Contact extends React.Component {
                 <label className="contact-form-label" htmlFor="contactpurpose">
                   Reason For Contact:
                 </label>
-                <select
-                  onChange={this.setSelectOption}
+                <ContactSelect
+                  onChangeProp={this.setSelectOption}
                   value={this.state.selectedOption}
-                  className="contact-form-contactinput"
-                  name="contactpurpose"
-                >
-                  <option className="contact-form-reason-option" value="Say Hi">
-                    {" "}
-                    Say Hi{" "}
-                  </option>
-                  <option
-                    className="contact-form-reason-option"
-                    value="Let's Chat"
-                  >
-                    {" "}
-                    Let's Chat{" "}
-                  </option>
-                  <option
-                    className="contact-form-reason-option"
-                    value="Freelance Work"
-                  >
-                    {" "}
-                    Freelance Opportunity{" "}
-                  </option>
-                  <option
-                    className="contact-form-reason-option"
-                    value="Job Opportunity"
-                  >
-                    {" "}
-                    Job Opportunity{" "}
-                  </option>
-                </select>
+                />
                 <input
                   className="contact-form-submit"
                   type="submit"
