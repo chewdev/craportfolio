@@ -6,7 +6,7 @@ import SuccessfulSubmit from "./SuccessfulSubmit";
 import SubmitError from "./SubmitError";
 import WhiteboardBottom from "./WhiteboardBottom";
 import ContactSelect from "./ContactSelect";
-import EmailError from "./EmailError";
+import ContactFormError from "./ContactFormError";
 
 export default class Contact extends React.Component {
   constructor() {
@@ -187,9 +187,10 @@ export default class Contact extends React.Component {
                   <label className="contact-form-label" htmlFor="contactname">
                     Full Name:
                   </label>
-                  {this.state.nameError ? (
-                    <div className="contact-form-error">Name is required</div>
-                  ) : null}
+                  <ContactFormError
+                    error={this.state.nameError}
+                    text={"Name is required"}
+                  />
                 </div>
                 <div className="contact-form-input-div">
                   <input
@@ -205,7 +206,10 @@ export default class Contact extends React.Component {
                   <label className="contact-form-label" htmlFor="contactemail">
                     E-mail:
                   </label>
-                  <EmailError error={this.state.emailError} />
+                  <ContactFormError
+                    error={this.state.emailError}
+                    text={"Please input a valid e-mail"}
+                  />
                 </div>
                 <div className="contact-form-input-div">
                   <input
@@ -221,11 +225,10 @@ export default class Contact extends React.Component {
                   <label className="contact-form-label" htmlFor="comments">
                     Comments:
                   </label>
-                  {this.state.commentCount > 235 ? (
-                    <div className="contact-form-error">
-                      {255 - this.state.commentCount} characters left
-                    </div>
-                  ) : null}
+                  <ContactFormError
+                    error={this.state.commentCount > 235}
+                    text={`${255 - this.state.commentCount} characters left`}
+                  />
                 </div>
                 <textarea
                   className="contact-form-comments-area"
