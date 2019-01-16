@@ -6,7 +6,6 @@ import SuccessfulSubmit from "./SuccessfulSubmit";
 import SubmitError from "./SubmitError";
 import WhiteboardBottom from "./WhiteboardBottom";
 import ContactSelect from "./ContactSelect";
-import ContactFormError from "./ContactFormError";
 import ContactFormLabel from "./ContactFormLabel";
 import ContactFormInput from "./ContactFormInput";
 import ErrorLabelDiv from "./ErrorLabelDiv";
@@ -18,14 +17,10 @@ export default class Contact extends React.Component {
     this.timeout = null;
 
     this.state = {
-      contactName: "",
-      contactEmail: "",
+      name: "",
+      email: "",
       comments: "",
-      selectedoption: "",
-      submittedName: "",
-      submittedEmail: "",
-      submittedComments: "",
-      submittedSelectedOption: "",
+      selectOption: "Say Hi",
       formClass: "",
       submitted: false,
       submitError: false,
@@ -37,93 +32,67 @@ export default class Contact extends React.Component {
       contactError: ""
     };
 
-    this.setContactName = this.setContactName.bind(this);
-    this.setContactEmail = this.setContactEmail.bind(this);
+    this.setName = this.setName.bind(this);
+    this.setEmail = this.setEmail.bind(this);
     this.setComments = this.setComments.bind(this);
     this.setSelectOption = this.setSelectOption.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  setContactName(e) {
-    const contactName = e.target.value;
-    // Name must be less than 50 chars
-    if (contactName.length > 50) {
-      return;
-    }
-
-    if (this.state.hadNameError && contactName === "") {
-      this.setState({ contactName, nameError: true });
-      return;
-    }
-
-    this.setState({ contactName, nameError: false });
+  setName(e) {
+    const name = e.target.value;
+    return name.length > 50
+      ? null
+      : this.setState({
+          name,
+          nameError: this.state.hadNameError && name === ""
+        });
   }
 
-  setContactEmail(e) {
-    const contactEmail = e.target.value;
-    // Emails must be less than 254 chars
-    if (contactEmail.length > 254) {
-      return;
-    }
-    // If user tried to submit an invalid email and current input is invalid
-    // Show email error message
-    if (this.state.hadEmailError && !isEmail(contactEmail)) {
-      this.setState({ contactEmail, emailError: true });
-      return;
-    }
-
-    // Don't show error message if user hasn't tried to submit form
-    // or if current email input is valid
-    this.setState({ contactEmail, emailError: false });
+  setEmail(e) {
+    const email = e.target.value;
+    return email.length > 254
+      ? null
+      : this.setState({
+          email,
+          emailError: this.state.hadEmailError && !isEmail(email)
+        });
   }
 
   setComments(e) {
     const comments = e.target.value;
     const commentCount = comments.length;
-    if (commentCount > 255) {
-      return;
-    }
-    this.setState({ comments, commentCount });
+    return commentCount > 255
+      ? null
+      : this.setState({ comments, commentCount });
   }
 
   setSelectOption(e) {
-    this.setState({ selectedOption: e.target.value });
+    this.setState({ selectOption: e.target.value });
   }
 
   onSubmit(e) {
     e.preventDefault();
 
-    const submittedName = e.target.contactname.value;
-    const submittedEmail = e.target.contactemail.value;
-    const submittedComments = e.target.comments.value;
-    const submittedSelectedOption = e.target.contactpurpose.value;
-    // Validate input
+    const submittedName = this.state.name;
+    const submittedEmail = this.state.email;
     let emailError = !isEmail(submittedEmail);
-    let hadEmailError = emailError;
     let nameError = submittedName.length < 1;
-    let hadNameError = nameError;
-
-    // If errors, show errors and return
     if (nameError || emailError) {
-      this.setState({ emailError, nameError, hadEmailError, hadNameError });
-      return;
+      return this.setState({
+        emailError,
+        nameError,
+        hadEmailError: emailError,
+        hadNameError: nameError
+      });
     }
+    const submittedComments = this.state.comments;
+    const submittedSelectedOption = this.state.selectOption;
 
     // If valid, set submitted values and begin fading form
-    this.setState({
-      submittedName,
-      submittedEmail,
-      submittedComments,
-      submittedSelectedOption,
-      contactName: "",
-      contactEmail: "",
-      comments: "",
-      formClass: "fade-away",
-      emailError,
-      nameError
-    });
+    this.setState({ formClass: "fade-away", emailError, nameError });
 
-    // Fading form takes 1 second, afterwards we want to keep it hidden
+    // Fading form takes 1 second, hide form after
     this.timeout = setTimeout(() => {
       this.setState({ formClass: "hide-form" });
       this.timeout = null;
@@ -139,23 +108,16 @@ export default class Contact extends React.Component {
       })
       .then(res => {
         const { data } = res;
-        // If successful request/response, but data sent was not accepted
         if (!data.accepted) {
-          // If contact form hasn't been hidden, cancel timeout and don't hide form
+          // If not accepted and contact form hasn't been hidden, cancel timeout and don't hide form
           if (this.timeout) {
             clearTimeout(this.timeout);
           }
-          // If user's email has already submitted contact form 5 times (5 entries in DB)
-          // data.alreadysubmitted should be
-          // "You have submitted a contact too many times, please contact directly."
-          // Show this error to the user
-          const contactError = data.alreadysubmitted
-            ? data.alreadysubmitted
-            : "";
+          // If user's email has already submitted contact form 5 times show error to user
+          const contactError = data.alreadysubmitted || "";
           this.setState({ submitError: true, formClass: "", contactError });
         } else {
-          // Successfully submitted contact form
-          // Show success message to user
+          // Successfully submit, show success message
           this.setState({ submitted: true, submitError: false });
         }
       })
@@ -190,9 +152,9 @@ export default class Contact extends React.Component {
                   error={this.state.nameError}
                 />
                 <ContactFormInput
-                  value={this.state.contactName}
-                  onChangeProp={this.setContactName}
-                  name={"contactname"}
+                  value={this.state.name}
+                  onChangeProp={this.setName}
+                  name={"name"}
                 />
                 <ErrorLabelDiv
                   labelText={"Email:"}
@@ -200,9 +162,9 @@ export default class Contact extends React.Component {
                   error={this.state.emailError}
                 />
                 <ContactFormInput
-                  value={this.state.contactEmail}
-                  onChangeProp={this.setContactEmail}
-                  name={"contactemail"}
+                  value={this.state.email}
+                  onChangeProp={this.setEmail}
+                  name={"email"}
                 />
                 <ErrorLabelDiv
                   labelText={"Comments:"}
@@ -219,7 +181,7 @@ export default class Contact extends React.Component {
                 <ContactFormLabel text={"Reason For Contact:"} />
                 <ContactSelect
                   onChangeProp={this.setSelectOption}
-                  value={this.state.selectedOption}
+                  value={this.state.selectOption}
                 />
                 <input
                   className="contact-form-submit"
