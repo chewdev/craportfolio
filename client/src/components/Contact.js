@@ -8,6 +8,8 @@ import WhiteboardBottom from "./WhiteboardBottom";
 import ContactSelect from "./ContactSelect";
 import ContactFormError from "./ContactFormError";
 import ContactFormLabel from "./ContactFormLabel";
+import ContactFormInput from "./ContactFormInput";
+import ErrorLabelDiv from "./ErrorLabelDiv";
 
 export default class Contact extends React.Component {
   constructor() {
@@ -169,12 +171,10 @@ export default class Contact extends React.Component {
   render() {
     return (
       <section id="contact" className="contact-section">
-        {
-          <SubmitError
-            submitError={this.state.submitError}
-            contactError={this.state.contactError}
-          />
-        }
+        <SubmitError
+          submitError={this.state.submitError}
+          contactError={this.state.contactError}
+        />
         <LazyLoad offset={600} throttle={25}>
           <div>
             <div className={`contact-form`}>
@@ -184,47 +184,31 @@ export default class Contact extends React.Component {
                 onSubmit={this.onSubmit}
               >
                 <h1 className="contact-form-title">Contact</h1>
-                <div className="contact-form-label-error-div">
-                  <ContactFormLabel text={"Full Name:"} />
-                  <ContactFormError
-                    error={this.state.nameError}
-                    text={"Name is required"}
-                  />
-                </div>
-                <div className="contact-form-input-div">
-                  <input
-                    className="contact-form-contactinput"
-                    type="text"
-                    id="contactname"
-                    name="contactname"
-                    value={this.state.contactName}
-                    onChange={this.setContactName}
-                  />
-                </div>
-                <div className="contact-form-label-error-div">
-                  <ContactFormLabel text={"Email:"} />
-                  <ContactFormError
-                    error={this.state.emailError}
-                    text={"Please input a valid e-mail"}
-                  />
-                </div>
-                <div className="contact-form-input-div">
-                  <input
-                    className="contact-form-contactinput"
-                    type="text"
-                    name="contactemail"
-                    id="contactemail"
-                    value={this.state.contactEmail}
-                    onChange={this.setContactEmail}
-                  />
-                </div>
-                <div className="contact-form-label-error-div">
-                  <ContactFormLabel text={"Comments:"} />
-                  <ContactFormError
-                    error={this.state.commentCount > 235}
-                    text={`${255 - this.state.commentCount} characters left`}
-                  />
-                </div>
+                <ErrorLabelDiv
+                  labelText={"Full Name:"}
+                  errorText={"Name is required"}
+                  error={this.state.nameError}
+                />
+                <ContactFormInput
+                  value={this.state.contactName}
+                  onChangeProp={this.setContactName}
+                  name={"contactname"}
+                />
+                <ErrorLabelDiv
+                  labelText={"Email:"}
+                  errorText={"Please input a valid e-mail"}
+                  error={this.state.emailError}
+                />
+                <ContactFormInput
+                  value={this.state.contactEmail}
+                  onChangeProp={this.setContactEmail}
+                  name={"contactemail"}
+                />
+                <ErrorLabelDiv
+                  labelText={"Comments:"}
+                  errorText={`${255 - this.state.commentCount} characters left`}
+                  error={this.state.commentCount > 235}
+                />
                 <textarea
                   className="contact-form-comments-area"
                   name="comments"
