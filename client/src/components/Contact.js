@@ -7,6 +7,7 @@ import SubmitError from "./SubmitError";
 import WhiteboardBottom from "./WhiteboardBottom";
 import ContactSelect from "./ContactSelect";
 import ContactFormError from "./ContactFormError";
+import ContactFormLabel from "./ContactFormLabel";
 
 export default class Contact extends React.Component {
   constructor() {
@@ -184,9 +185,7 @@ export default class Contact extends React.Component {
               >
                 <h1 className="contact-form-title">Contact</h1>
                 <div className="contact-form-label-error-div">
-                  <label className="contact-form-label" htmlFor="contactname">
-                    Full Name:
-                  </label>
+                  <ContactFormLabel text={"Full Name:"} />
                   <ContactFormError
                     error={this.state.nameError}
                     text={"Name is required"}
@@ -203,9 +202,7 @@ export default class Contact extends React.Component {
                   />
                 </div>
                 <div className="contact-form-label-error-div">
-                  <label className="contact-form-label" htmlFor="contactemail">
-                    E-mail:
-                  </label>
+                  <ContactFormLabel text={"Email:"} />
                   <ContactFormError
                     error={this.state.emailError}
                     text={"Please input a valid e-mail"}
@@ -222,9 +219,7 @@ export default class Contact extends React.Component {
                   />
                 </div>
                 <div className="contact-form-label-error-div">
-                  <label className="contact-form-label" htmlFor="comments">
-                    Comments:
-                  </label>
+                  <ContactFormLabel text={"Comments:"} />
                   <ContactFormError
                     error={this.state.commentCount > 235}
                     text={`${255 - this.state.commentCount} characters left`}
@@ -237,9 +232,7 @@ export default class Contact extends React.Component {
                   value={this.state.comments}
                   onChange={this.setComments}
                 />
-                <label className="contact-form-label" htmlFor="contactpurpose">
-                  Reason For Contact:
-                </label>
+                <ContactFormLabel text={"Reason For Contact:"} />
                 <ContactSelect
                   onChangeProp={this.setSelectOption}
                   value={this.state.selectedOption}
