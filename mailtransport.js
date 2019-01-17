@@ -17,15 +17,12 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-const sendMail = (
-  { submittedEmail, submittedName, submittedComments, submittedSelectedOption },
-  callback
-) => {
+const sendMail = ({ email, name, comments, selectOption }, callback) => {
   const mailOptions = {
-    from: submittedEmail,
+    from: email,
     to: keys.SEND_EMAIL,
-    subject: `Portfolio Inquiry From ${submittedName}`,
-    html: `<p><strong>Contact Name:</strong> ${submittedName}</p><p><strong>Contact E-mail:</strong> ${submittedEmail}</p><p><strong>Reason For Contact:</strong> ${submittedSelectedOption}</p><p><strong>Comments:</strong> ${submittedComments}</p>`
+    subject: `Portfolio Inquiry From ${name}`,
+    html: `<p><strong>Contact Name:</strong> ${name}</p><p><strong>Contact E-mail:</strong> ${email}</p><p><strong>Reason For Contact:</strong> ${selectOption}</p><p><strong>Comments:</strong> ${comments}</p>`
   };
 
   // Try to send email with contact form information

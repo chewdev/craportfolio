@@ -13,9 +13,7 @@ import ErrorLabelDiv from "./ErrorLabelDiv";
 export default class Contact extends React.Component {
   constructor() {
     super();
-
     this.timeout = null;
-
     this.state = {
       name: "",
       email: "",
@@ -31,15 +29,9 @@ export default class Contact extends React.Component {
       hadEmailError: false,
       contactError: ""
     };
-
-    this.setName = this.setName.bind(this);
-    this.setEmail = this.setEmail.bind(this);
-    this.setComments = this.setComments.bind(this);
-    this.setSelectOption = this.setSelectOption.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
   }
 
-  setName(e) {
+  setName = e => {
     const name = e.target.value;
     return name.length > 50
       ? null
@@ -47,9 +39,9 @@ export default class Contact extends React.Component {
           name,
           nameError: this.state.hadNameError && name === ""
         });
-  }
+  };
 
-  setEmail(e) {
+  setEmail = e => {
     const email = e.target.value;
     return email.length > 254
       ? null
@@ -57,27 +49,26 @@ export default class Contact extends React.Component {
           email,
           emailError: this.state.hadEmailError && !isEmail(email)
         });
-  }
+  };
 
-  setComments(e) {
+  setComments = e => {
     const comments = e.target.value;
     const commentCount = comments.length;
     return commentCount > 255
       ? null
       : this.setState({ comments, commentCount });
-  }
+  };
 
-  setSelectOption(e) {
+  setSelectOption = e => {
     this.setState({ selectOption: e.target.value });
-  }
+  };
 
-  onSubmit(e) {
+  onSubmit = e => {
     e.preventDefault();
 
-    const submittedName = this.state.name;
-    const submittedEmail = this.state.email;
-    let emailError = !isEmail(submittedEmail);
-    let nameError = submittedName.length < 1;
+    const { name, email, comments, selectOption } = this.state;
+    let emailError = !isEmail(email);
+    let nameError = name.length < 1;
     if (nameError || emailError) {
       return this.setState({
         emailError,
@@ -86,25 +77,20 @@ export default class Contact extends React.Component {
         hadNameError: nameError
       });
     }
-    const submittedComments = this.state.comments;
-    const submittedSelectedOption = this.state.selectOption;
-
     // If valid, set submitted values and begin fading form
     this.setState({ formClass: "fade-away", emailError, nameError });
-
     // Fading form takes 1 second, hide form after
     this.timeout = setTimeout(() => {
       this.setState({ formClass: "hide-form" });
       this.timeout = null;
     }, 1000);
-
     // Send input data from contact form to the POST route of '/contact'
     axios
       .post(`/contact`, {
-        submittedName,
-        submittedEmail,
-        submittedComments,
-        submittedSelectedOption
+        name,
+        email,
+        comments,
+        selectOption
       })
       .then(res => {
         const { data } = res;
@@ -128,7 +114,7 @@ export default class Contact extends React.Component {
         }
         this.setState({ submitError: true, formClass: "" });
       });
-  }
+  };
 
   render() {
     return (

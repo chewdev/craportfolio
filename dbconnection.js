@@ -9,27 +9,24 @@ const connection = mysql.createPool({
   database: "portfolio"
 });
 
-const checkContactCount = (submittedEmail, callback) => {
+const checkContactCount = (email, callback) => {
   connection.query(
     "SELECT * FROM submitted_emails WHERE ?",
     {
-      email: submittedEmail
+      email: email
     },
     callback
   );
 };
 
-const addContact = (
-  { submittedName, submittedEmail, submittedComments, submittedSelectedOption },
-  callback
-) => {
+const addContact = ({ name, email, comments, selectOption }, callback) => {
   connection.query(
     "INSERT INTO submitted_emails SET ?",
     {
-      full_name: submittedName,
-      email: submittedEmail,
-      comments: submittedComments,
-      reason: submittedSelectedOption
+      full_name: name,
+      email: email,
+      comments: comments,
+      reason: selectOption
     },
     callback
   );

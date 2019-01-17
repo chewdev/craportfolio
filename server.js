@@ -85,7 +85,7 @@ app.post("/contact", (req, res) => {
     });
   };
 
-  checkContactCount(data.submittedEmail, countCallback);
+  checkContactCount(data.email, countCallback);
 });
 
 app.get("/questions", (req, res) => {
