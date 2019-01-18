@@ -1,9 +1,6 @@
 import React from "react";
 import Typist from "react-typist";
-
-const lowerCaseSplit = function(input) {
-  return input.toLowerCase().split(" ");
-};
+import { bestMatches } from "../selectors/QA";
 
 class QA extends React.Component {
   constructor(props) {
@@ -29,71 +26,28 @@ class QA extends React.Component {
     }
   }
 
-  howManyMatches(questionArr, searchArr, textInput) {
-    const wordArr = [];
-    let count = 0;
-    textInput.forEach(word => {
-      if (wordArr.includes(word)) {
-        return;
-      } else {
-        wordArr.push(word);
-        if (questionArr.includes(word)) {
-          count++;
-        }
-        if (searchArr.includes(word)) {
-          count += 2;
-        }
-      }
-    });
-    return count;
-  }
-
   onTextInputChange(e) {
     if (e.target.value.match(/[\n]/g)) {
-      this.getAnswer();
-      return;
+      return this.getAnswer();
     }
     if (!this.state.hasBeenChanged) {
-      const hasBeenChanged = true;
       this.setState({
-        hasBeenChanged,
+        hasBeenChanged: true,
         qaPlaceholder: "Do you have a question for me?"
       });
     }
     const textInput = e.target.value;
     if (textInput.length === 0) {
-      this.setState({ questionArr: [], textInput });
-      return;
+      return this.setState({ questionArr: [], textInput });
     }
-    const textInputArr = lowerCaseSplit(textInput).filter(word => word !== "");
-    this.setState(prevState => {
-      let items = this.qA.filter(obj =>
-        textInputArr.some(
-          inputWord =>
-            lowerCaseSplit(obj.question).includes(inputWord) ||
-            lowerCaseSplit(obj.search_terms).includes(inputWord)
-        )
-      );
 
-      items = items.sort((objA, objB) => {
-        const [questionA, searchA, questionB, searchB] = [
-          objA.question,
-          objA.search_terms,
-          objB.question,
-          objB.search_terms
-        ].map(lowerCaseSplit);
-        let a = this.howManyMatches(questionA, searchA, textInputArr);
-        let b = this.howManyMatches(questionB, searchB, textInputArr);
-
-        return a > b ? -1 : 1;
-      });
-      const questionArr = items;
-      return {
-        currentText: "",
-        questionArr,
-        textInput,
-        items
-      };
+    const items = bestMatches(textInput, this.qA);
+    const questionArr = items;
+    return this.setState({
+      currentText: "",
+      questionArr,
+      textInput,
+      items
     });
   }
 
