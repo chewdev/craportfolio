@@ -16,7 +16,6 @@ class QA extends React.Component {
       hasBeenAsked: false
     };
     this.onTextInputChange = this.onTextInputChange.bind(this);
-    this.howManyMatches = this.howManyMatches.bind(this);
     this.getAnswer = this.getAnswer.bind(this);
   }
 
