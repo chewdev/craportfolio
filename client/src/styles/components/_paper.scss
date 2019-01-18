@@ -59,6 +59,26 @@
   &-answer {
     margin-top: 0.25rem;
   }
+
+  &-area {
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    height: 5.6rem;
+    width: 13.5rem;
+    resize: none;
+    overflow: hidden;
+  }
+}
+
+.paper-ask {
+  margin-left: 8rem;
+  background: inherit;
+  border: none;
+  border-bottom: 1px solid black;
+  font-family: inherit;
+  color: inherit;
+  font-size: 1.1rem;
 }
 
 .paper-contact-link-div {
