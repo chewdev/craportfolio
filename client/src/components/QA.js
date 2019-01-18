@@ -85,32 +85,14 @@ class QA extends React.Component {
         <textarea
           name="knowme"
           id="knowme"
-          className={`paper-text ${this.chromeClass} paper-text-mtop`}
-          style={{
-            background: "transparent",
-            border: "none",
-            fontFamily: "inherit",
-            height: "5.6rem",
-            width: "13.5rem",
-            resize: "none",
-            overflow: "hidden"
-          }}
+          className={`paper-text ${
+            this.chromeClass
+          } paper-text-mtop paper-text-area`}
           placeholder={this.state.qaPlaceholder}
           onChange={this.onTextInputChange}
           value={this.state.textInput}
         />
-        <button
-          onClick={this.getAnswer}
-          style={{
-            marginLeft: "8rem",
-            background: "inherit",
-            border: "none",
-            borderBottom: "1px solid black",
-            fontFamily: "inherit",
-            color: "inherit",
-            fontSize: "1.1rem"
-          }}
-        >
+        <button onClick={this.getAnswer} className={"paper-ask"}>
           Ask
         </button>
         <div className={`paper-text paper-text-ql ${this.chromeClass}`}>
