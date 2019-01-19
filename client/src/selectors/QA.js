@@ -43,5 +43,5 @@ export function bestMatches(textInput, qA) {
 
     return a > b ? -1 : 1;
   });
-  return items;
+  return items.slice(0, 5);
 }

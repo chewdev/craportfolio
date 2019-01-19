@@ -105,26 +105,24 @@ class QA extends React.Component {
           )}
           {this.state.questionArr.length > 0 ? (
             <ul>
-              {this.state.questionArr
-                .filter((val, ind) => ind <= 4)
-                .map(obj => (
-                  <Typist
-                    avgTypingDelay={10}
-                    stdTypingDelay={10}
-                    cursor={{ show: false }}
-                    key={obj.question}
-                  >
-                    <li key={obj.question} className="question-option">
-                      <button
-                        className="question-option-button"
-                        onClick={() => this.getAnswer(obj.question)}
-                      >
-                        {obj.question}
-                      </button>
-                      <br />
-                    </li>
-                  </Typist>
-                ))}
+              {this.state.questionArr.map(obj => (
+                <Typist
+                  avgTypingDelay={10}
+                  stdTypingDelay={10}
+                  cursor={{ show: false }}
+                  key={obj.question}
+                >
+                  <li key={obj.question} className="question-option">
+                    <button
+                      className="question-option-button"
+                      onClick={() => this.getAnswer(obj.question)}
+                    >
+                      {obj.question}
+                    </button>
+                    <br />
+                  </li>
+                </Typist>
+              ))}
             </ul>
           ) : this.state.currentText !== "" ? null : this.state.textInput !==
             "" ? (
