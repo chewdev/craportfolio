@@ -1,5 +1,6 @@
 import React from "react";
-import Typist from "react-typist";
+import Questions from "./Questions";
+import Answer from "./Answer";
 import { bestMatches } from "../selectors/QA";
 
 class QA extends React.Component {
@@ -97,43 +98,17 @@ class QA extends React.Component {
         </button>
         <div className={`paper-text paper-text-ql ${this.chromeClass}`}>
           {this.state.currentText ? (
-            <p className={`paper-text-answer ${this.chromeClass}`}>
-              {this.state.currentText}
-            </p>
+            <Answer
+              chromeClass={this.chromeClass}
+              currentText={this.state.currentText}
+            />
           ) : (
-            ""
+            <Questions
+              questionArr={this.state.questionArr}
+              textInput={this.state.textInput}
+              getAnswer={this.getAnswer}
+            />
           )}
-          {this.state.questionArr.length > 0 ? (
-            <ul>
-              {this.state.questionArr.map(obj => (
-                <Typist
-                  avgTypingDelay={10}
-                  stdTypingDelay={10}
-                  cursor={{ show: false }}
-                  key={obj.question}
-                >
-                  <li key={obj.question} className="question-option">
-                    <button
-                      className="question-option-button"
-                      onClick={() => this.getAnswer(obj.question)}
-                    >
-                      {obj.question}
-                    </button>
-                    <br />
-                  </li>
-                </Typist>
-              ))}
-            </ul>
-          ) : this.state.currentText !== "" ? null : this.state.textInput !==
-            "" ? (
-            <Typist
-              avgTypingDelay={10}
-              stdTypingDelay={10}
-              cursor={{ show: false }}
-            >
-              <p>No matching questions</p>
-            </Typist>
-          ) : null}
         </div>
       </div>
     );
