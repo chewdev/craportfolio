@@ -79,7 +79,7 @@ class QA extends React.Component {
 
   render() {
     return (
-      <div style={{ height: "22.5rem" }}>
+      <div className="paper-qa">
         <label className="paper-text" htmlFor="knowme">
           Get to know me:
         </label>
