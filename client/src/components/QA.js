@@ -48,27 +48,22 @@ class QA extends React.Component {
     });
   }
 
-  getAnswer(question) {
-    const possibleAnsObj = this.qA.filter(
-      val => val.question === question || val.question === this.state.textInput
-    );
+  getAnswer(question = null) {
     const answerObj =
-      possibleAnsObj.length === 1
-        ? possibleAnsObj
-        : this.state.questionArr.length > 0
-        ? this.state.questionArr
-        : [
-            {
-              answer:
-                "No matching questions, please rephrase or ask another question",
-              question: this.state.textInput
-            }
-          ];
-    const answer = answerObj[0].answer;
+      question !== null
+        ? this.qA.find(
+            val =>
+              val.question === question || val.question === this.state.textInput
+          )
+        : this.state.questionArr.length > 0 && this.state.questionArr[0];
+    const answer =
+      (answerObj && answerObj.answer) ||
+      "No matching questions, please rephrase or ask another question";
+    const textInput = (answerObj && answerObj.question) || this.state.textInput;
     this.setState({
       currentText: answer,
       questionArr: [],
-      textInput: answerObj[0].question,
+      textInput,
       hasBeenAsked: true,
       qaPlaceholder: "Have a different question?"
     });
