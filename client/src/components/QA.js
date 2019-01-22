@@ -8,7 +8,6 @@ class QA extends React.Component {
     super(props);
     this.qA = [];
     this.state = {
-      items: [],
       currentText: "",
       textInput: "",
       questionArr: [],
@@ -41,13 +40,11 @@ class QA extends React.Component {
       return this.setState({ questionArr: [], textInput });
     }
 
-    const items = bestMatches(textInput, this.qA);
-    const questionArr = items;
+    const questionArr = bestMatches(textInput, this.qA);
     return this.setState({
       currentText: "",
       questionArr,
-      textInput,
-      items
+      textInput
     });
   }
 
