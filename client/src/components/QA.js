@@ -2,6 +2,7 @@ import React from "react";
 import Questions from "./Questions";
 import Answer from "./Answer";
 import { bestMatches } from "../selectors/QA";
+import QuestionInput from "./QuestionInput";
 
 class QA extends React.Component {
   constructor(props) {
@@ -75,15 +76,11 @@ class QA extends React.Component {
         <label className="paper-text" htmlFor="knowme">
           Get to know me:
         </label>
-        <textarea
-          name="knowme"
-          id="knowme"
-          className={`paper-text ${
-            this.chromeClass
-          } paper-text-mtop paper-text-area`}
-          placeholder={this.state.qaPlaceholder}
-          onChange={this.onTextInputChange}
+        <QuestionInput
           value={this.state.textInput}
+          placeholder={this.state.qaPlaceholder}
+          chromeClass={this.chromeClass}
+          onChangeProp={this.onTextInputChange}
         />
         <button onClick={this.getAnswer} className={"paper-ask"}>
           Ask
