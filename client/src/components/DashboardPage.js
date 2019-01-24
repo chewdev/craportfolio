@@ -1,29 +1,20 @@
 import React from "react";
-import Introduction from "./Introduction";
-import Header from "./Header";
 import AboutMe from "./AboutMe";
-import Projects from "./Projects";
 import Contact from "./Contact";
 import Footer from "./Footer";
-import LazyLoad from "react-lazy-load";
+import Threshold from "./Threshold";
+import Dirt from "./Dirt";
+import Top from "./Top";
+import ProjectsSection from "./ProjectsSection";
 
 const DashboardPage = () => (
-  <div id="top-level">
-    <div className="background-div">
-      <Header />
-      <div className="box-layout">
-        <Introduction />
-      </div>
-    </div>
-    <div className="dirt-transition" />
+  <div>
+    <Top />
+    <Dirt />
     <AboutMe />
-    <div className="threshold-transition" />
-    <div id="projects" className="projects">
-      <LazyLoad offset={800} throttle={25}>
-        <Projects />
-      </LazyLoad>
-    </div>
-    <div className="threshold-transition" />
+    <Threshold />
+    <ProjectsSection />
+    <Threshold />
     <Contact />
     <Footer />
   </div>
