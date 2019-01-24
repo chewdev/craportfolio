@@ -1,7 +1,7 @@
 import React from "react";
 import Questions from "./Questions";
 import Answer from "./Answer";
-import { bestMatches } from "../selectors/QA";
+import { bestMatches } from "../../selectors/QA";
 import QuestionInput from "./QuestionInput";
 
 class QA extends React.Component {

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import skills from "../data/skills";
+import skills from "../../data/skills";
 
 export default class SkillsTable extends Component {
   constructor(props) {
