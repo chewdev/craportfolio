@@ -10,7 +10,7 @@ export default function Questions({ questionArr, textInput, getAnswer }) {
   ) : (
     <ul>
       {questionArr.map(obj => (
-        <QuestionLI getAnswer={getAnswer} obj={obj} />
+        <QuestionLI key={obj.question} getAnswer={getAnswer} obj={obj} />
       ))}
     </ul>
   );
