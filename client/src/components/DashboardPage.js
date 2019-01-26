@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import AboutMe from "./AboutMe/AboutMe";
 import Contact from "./Contact/Contact";
 import Footer from "./Footer";
@@ -8,7 +8,7 @@ import Top from "./Top/Top";
 import ProjectsSection from "./Projects/ProjectsSection";
 
 const DashboardPage = () => (
-  <div>
+  <Fragment>
     <Top />
     <Dirt />
     <AboutMe />
@@ -17,7 +17,7 @@ const DashboardPage = () => (
     <Threshold />
     <Contact />
     <Footer />
-  </div>
+  </Fragment>
 );
 
 export default DashboardPage;
