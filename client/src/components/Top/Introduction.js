@@ -1,6 +1,7 @@
 import React from "react";
 import Typist from "react-typist";
 import QA from "./QA";
+import PaperBoxLayout from "./PaperBoxLayout";
 
 class Introduction extends React.Component {
   constructor(props) {
@@ -40,33 +41,31 @@ class Introduction extends React.Component {
 
   render() {
     return (
-      <div className="box-layout">
-        <div className="paper-box">
-          <div className="paper-tape">
-            <div className="paper-tape--left" />
-            <div className="paper-tape--right" />
-          </div>
-          <Typist
-            avgTypingDelay={30}
-            stdTypingDelay={15}
-            startDelay={2000}
-            cursor={{ show: false }}
-          >
-            <h1 className="paper-header">Chris Ewald</h1>
-            <QA qA={this.state.qA} />
-
-            <br />
-            <p className={`paper-text ${this.chromeClass}`}>
-              Have more questions? Contact me
-            </p>
-          </Typist>
-          <div className="paper-contact-link-div">
-            <a href="#contact" className="paper-contact-link-a">
-              <i className="fas fa-chevron-down paper-contact-link" />
-            </a>
-          </div>
+      <PaperBoxLayout>
+        <div className="paper-tape">
+          <div className="paper-tape--left" />
+          <div className="paper-tape--right" />
         </div>
-      </div>
+        <Typist
+          avgTypingDelay={30}
+          stdTypingDelay={15}
+          startDelay={2000}
+          cursor={{ show: false }}
+        >
+          <h1 className="paper-header">Chris Ewald</h1>
+          <QA qA={this.state.qA} />
+
+          <br />
+          <p className={`paper-text ${this.chromeClass}`}>
+            Have more questions? Contact me
+          </p>
+        </Typist>
+        <div className="paper-contact-link-div">
+          <a href="#contact" className="paper-contact-link-a">
+            <i className="fas fa-chevron-down paper-contact-link" />
+          </a>
+        </div>
+      </PaperBoxLayout>
     );
   }
 }
