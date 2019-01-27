@@ -5,11 +5,16 @@ import Footer from "./Footer";
 import Threshold from "./Threshold";
 import Dirt from "./Dirt";
 import Top from "./Top/Top";
+import Header from "./Top/Header";
+import Introduction from "./Top/Introduction";
 import ProjectsSection from "./Projects/ProjectsSection";
 
 const DashboardPage = () => (
   <Fragment>
-    <Top />
+    <Top>
+      <Header />
+      <Introduction />
+    </Top>
     <Dirt />
     <AboutMe />
     <Threshold />
