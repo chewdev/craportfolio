@@ -11,52 +11,27 @@ class Projects extends React.Component {
       remoteLightClass: "",
       tvDisplayType: "image"
     };
-
-    this.nextProj = this.nextProj.bind(this);
-    this.prevProj = this.prevProj.bind(this);
-    this.remoteSetInd = this.remoteSetInd.bind(this);
-    this.changeAuto = this.changeAuto.bind(this);
-    this.onOpenProject = this.onOpenProject.bind(this);
-    this.startInterval = this.startInterval.bind(this);
-    this.removeRemoteLightClass = this.removeRemoteLightClass.bind(this);
-    this.guide = this.guide.bind(this);
-    this.info = this.info.bind(this);
-    this.up = this.up.bind(this);
-    this.down = this.down.bind(this);
-    this.ok = this.ok.bind(this);
   }
 
-  startInterval() {
-    const projIntervalId = setInterval(() => {
-      this.nextProj();
-    }, 10000);
+  startInterval = () => {
+    return setInterval(this.nextProj, 10000);
+  };
 
-    return projIntervalId;
-  }
-
-  removeRemoteLightClass() {
-    setTimeout(() => {
-      this.setState(() => {
-        return {
-          remoteLightClass: ""
-        };
-      });
-    }, 350);
-  }
+  removeRemoteLightClass = () => {
+    setTimeout(() => this.setState({ remoteLightClass: "" }), 350);
+  };
 
   componentDidMount() {
     const projIntervalId = this.startInterval();
-    this.setState(() => ({ projIntervalId }));
+    this.setState({ projIntervalId });
   }
 
   componentWillUnmount() {
     clearInterval(this.state.projIntervalId);
-    this.setState(() => ({
-      projIntervalId: null
-    }));
+    this.setState({ projIntervalId: null });
   }
 
-  nextProj() {
+  nextProj = () => {
     if (this.state.projIntervalId !== null) {
       clearInterval(this.state.projIntervalId);
 
@@ -89,9 +64,9 @@ class Projects extends React.Component {
       }
     }
     this.removeRemoteLightClass();
-  }
+  };
 
-  prevProj() {
+  prevProj = () => {
     if (this.state.projIntervalId !== null) {
       clearInterval(this.state.projIntervalId);
 
@@ -125,9 +100,9 @@ class Projects extends React.Component {
     }
 
     this.removeRemoteLightClass();
-  }
+  };
 
-  remoteSetInd(input) {
+  remoteSetInd = input => {
     const currProjInd = input;
 
     if (this.state.projIntervalId !== null) {
@@ -148,9 +123,9 @@ class Projects extends React.Component {
     }
 
     this.removeRemoteLightClass();
-  }
+  };
 
-  changeAuto() {
+  changeAuto = () => {
     if (this.state.tvDisplayType === "image") {
       if (this.state.projIntervalId === null) {
         this.setState(prevState => {
@@ -176,15 +151,15 @@ class Projects extends React.Component {
     }
 
     this.removeRemoteLightClass();
-  }
+  };
 
-  onOpenProject() {
+  onOpenProject = () => {
     if (this.state.projIntervalId !== null) {
       this.changeAuto();
     }
-  }
+  };
 
-  guide() {
+  guide = () => {
     this.setState(prevState => {
       const tvDisplayType =
         prevState.tvDisplayType === "projlist" ? "image" : "projlist";
@@ -204,9 +179,9 @@ class Projects extends React.Component {
     });
 
     this.removeRemoteLightClass();
-  }
+  };
 
-  info() {
+  info = () => {
     this.setState(prevState => {
       const tvDisplayType =
         prevState.tvDisplayType === "currprojinfo" ? "image" : "currprojinfo";
@@ -225,9 +200,9 @@ class Projects extends React.Component {
       }
     });
     this.removeRemoteLightClass();
-  }
+  };
 
-  up() {
+  up = () => {
     if (this.state.tvDisplayType === "projlist") {
       this.setState(prevState => {
         const currProjInd =
@@ -243,9 +218,9 @@ class Projects extends React.Component {
       this.setState({ remoteLightClass: "flash-red" });
     }
     this.removeRemoteLightClass();
-  }
+  };
 
-  down() {
+  down = () => {
     if (this.state.tvDisplayType === "projlist") {
       this.setState(prevState => {
         const currProjInd =
@@ -262,9 +237,9 @@ class Projects extends React.Component {
     }
 
     this.removeRemoteLightClass();
-  }
+  };
 
-  ok() {
+  ok = () => {
     if (this.state.tvDisplayType === "image") {
       document.querySelector(".project-link").click();
       this.setState({ remoteLightClass: "flash-green" });
@@ -276,7 +251,7 @@ class Projects extends React.Component {
     }
 
     this.removeRemoteLightClass();
-  }
+  };
 
   render() {
     const project = projectData[this.state.currProjInd];
