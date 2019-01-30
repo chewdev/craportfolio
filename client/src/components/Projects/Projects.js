@@ -14,243 +14,147 @@ class Projects extends React.Component {
   }
 
   startInterval = () => {
-    return setInterval(this.nextProj, 10000);
+    this.setState({ projIntervalId: setInterval(this.nextProj, 5000) });
+  };
+
+  stopInterval = () => {
+    clearInterval(this.state.projIntervalId);
+    this.setState({ projIntervalId: null });
+  };
+
+  restartInterval = () => {
+    clearInterval(this.state.projIntervalId);
+    this.startInterval();
+  };
+
+  flashGreen = () => {
+    this.setState({ remoteLightClass: "flash-green" });
+    this.removeRemoteLightClass();
+  };
+
+  flashRed = () => {
+    this.setState({ remoteLightClass: "flash-red" });
+    this.removeRemoteLightClass();
+  };
+
+  stopAndFlash = () => {
+    if (this.state.projIntervalId !== null) {
+      this.stopInterval();
+      this.flashRed();
+    } else {
+      this.flashGreen();
+    }
   };
 
   removeRemoteLightClass = () => {
     setTimeout(() => this.setState({ remoteLightClass: "" }), 350);
   };
 
+  next = () => {
+    this.setState(({ currProjInd: prevInd }) => {
+      const currProjInd = prevInd >= projectData.length - 1 ? 0 : prevInd + 1;
+      return { currProjInd };
+    });
+  };
+
+  prev = () => {
+    this.setState(({ currProjInd: prevInd }) => {
+      const currProjInd = prevInd <= 0 ? projectData.length - 1 : prevInd - 1;
+      return { currProjInd };
+    });
+  };
+
   componentDidMount() {
-    const projIntervalId = this.startInterval();
-    this.setState({ projIntervalId });
+    this.startInterval();
   }
 
   componentWillUnmount() {
-    clearInterval(this.state.projIntervalId);
-    this.setState({ projIntervalId: null });
+    this.stopInterval();
   }
 
   nextProj = () => {
     if (this.state.projIntervalId !== null) {
-      clearInterval(this.state.projIntervalId);
-
-      this.setState(prevState => {
-        const projIntervalId = this.startInterval();
-        const currProjInd =
-          prevState.currProjInd === projectData.length - 1
-            ? 0
-            : prevState.currProjInd + 1;
-        return {
-          currProjInd,
-          projIntervalId,
-          remoteLightClass: "flash-green"
-        };
-      });
-    } else {
-      if (this.state.tvDisplayType === "projlist") {
-        this.setState({ tvDisplayType: "currprojinfo" });
-      } else {
-        this.setState(prevState => {
-          const currProjInd =
-            prevState.currProjInd === projectData.length - 1
-              ? 0
-              : prevState.currProjInd + 1;
-          return {
-            currProjInd,
-            remoteLightClass: "flash-green"
-          };
-        });
-      }
+      this.restartInterval();
     }
-    this.removeRemoteLightClass();
+    this.next();
+    this.flashGreen();
   };
 
   prevProj = () => {
     if (this.state.projIntervalId !== null) {
-      clearInterval(this.state.projIntervalId);
-
-      this.setState(prevState => {
-        const projIntervalId = this.startInterval();
-        const currProjInd =
-          prevState.currProjInd === 0
-            ? projectData.length - 1
-            : prevState.currProjInd - 1;
-        return {
-          currProjInd,
-          projIntervalId,
-          remoteLightClass: "flash-green"
-        };
-      });
-    } else {
-      if (this.state.tvDisplayType === "projlist") {
-        this.setState({ tvDisplayType: "image" });
-      } else {
-        this.setState(prevState => {
-          const currProjInd =
-            prevState.currProjInd === 0
-              ? projectData.length - 1
-              : prevState.currProjInd - 1;
-          return {
-            currProjInd,
-            remoteLightClass: "flash-green"
-          };
-        });
-      }
+      this.restartInterval();
     }
-
-    this.removeRemoteLightClass();
+    this.prev();
+    this.flashGreen();
   };
 
   remoteSetInd = input => {
-    const currProjInd = input;
-
     if (this.state.projIntervalId !== null) {
-      clearInterval(this.state.projIntervalId);
-      this.setState(prevState => {
-        const projIntervalId = this.startInterval();
-        return {
-          currProjInd,
-          projIntervalId,
-          remoteLightClass: "flash-green"
-        };
-      });
-    } else {
-      this.setState(() => ({
-        currProjInd,
-        remoteLightClass: "flash-green"
-      }));
+      this.restartInterval();
     }
-
-    this.removeRemoteLightClass();
+    this.setState({ currProjInd: input });
+    this.flashGreen();
   };
 
   changeAuto = () => {
-    if (this.state.tvDisplayType === "image") {
-      if (this.state.projIntervalId === null) {
-        this.setState(prevState => {
-          const projIntervalId = this.startInterval();
-          return {
-            projIntervalId,
-            remoteLightClass: "flash-green"
-          };
-        });
-      } else {
-        clearInterval(this.state.projIntervalId);
-        this.setState(prevState => ({
-          projIntervalId: null,
-          remoteLightClass: "flash-red"
-        }));
-      }
+    if (this.state.tvDisplayType !== "image") {
+      this.flashRed();
     } else {
-      this.setState(prevState => {
-        return {
-          remoteLightClass: "flash-red"
-        };
-      });
+      if (this.state.projIntervalId === null) {
+        this.startInterval();
+        this.flashGreen();
+      } else {
+        this.stopInterval();
+        this.flashRed();
+      }
     }
-
-    this.removeRemoteLightClass();
   };
 
   onOpenProject = () => {
     if (this.state.projIntervalId !== null) {
-      this.changeAuto();
+      this.stopInterval();
     }
   };
 
   guide = () => {
-    this.setState(prevState => {
-      const tvDisplayType =
-        prevState.tvDisplayType === "projlist" ? "image" : "projlist";
-      if (this.state.projIntervalId !== null) {
-        clearInterval(this.state.projIntervalId);
-        return {
-          tvDisplayType,
-          projIntervalId: null,
-          remoteLightClass: "flash-red"
-        };
-      } else {
-        return {
-          tvDisplayType,
-          remoteLightClass: "flash-green"
-        };
-      }
-    });
-
-    this.removeRemoteLightClass();
+    this.stopAndFlash();
+    this.setState(state => ({
+      tvDisplayType: state.tvDisplayType === "guide" ? "image" : "guide"
+    }));
   };
 
   info = () => {
-    this.setState(prevState => {
-      const tvDisplayType =
-        prevState.tvDisplayType === "currprojinfo" ? "image" : "currprojinfo";
-      if (this.state.projIntervalId !== null) {
-        clearInterval(this.state.projIntervalId);
-        return {
-          tvDisplayType,
-          projIntervalId: null,
-          remoteLightClass: "flash-red"
-        };
-      } else {
-        return {
-          tvDisplayType,
-          remoteLightClass: "flash-green"
-        };
-      }
-    });
-    this.removeRemoteLightClass();
+    this.stopAndFlash();
+    this.setState(state => ({
+      tvDisplayType: state.tvDisplayType === "info" ? "image" : "info"
+    }));
   };
 
   up = () => {
-    if (this.state.tvDisplayType === "projlist") {
-      this.setState(prevState => {
-        const currProjInd =
-          prevState.currProjInd === 0
-            ? projectData.length - 1
-            : prevState.currProjInd - 1;
-        return {
-          currProjInd,
-          remoteLightClass: "flash-green"
-        };
-      });
+    if (this.state.tvDisplayType === "guide") {
+      this.prev();
+      this.flashGreen();
     } else {
-      this.setState({ remoteLightClass: "flash-red" });
+      this.flashRed();
     }
-    this.removeRemoteLightClass();
   };
 
   down = () => {
-    if (this.state.tvDisplayType === "projlist") {
-      this.setState(prevState => {
-        const currProjInd =
-          prevState.currProjInd === projectData.length - 1
-            ? 0
-            : prevState.currProjInd + 1;
-        return {
-          currProjInd,
-          remoteLightClass: "flash-green"
-        };
-      });
+    if (this.state.tvDisplayType === "guide") {
+      this.next();
+      this.flashGreen();
     } else {
-      this.setState({ remoteLightClass: "flash-red" });
+      this.flashRed();
     }
-
-    this.removeRemoteLightClass();
   };
 
   ok = () => {
     if (this.state.tvDisplayType === "image") {
       document.querySelector(".project-link").click();
-      this.setState({ remoteLightClass: "flash-green" });
     } else {
-      this.setState({
-        tvDisplayType: "image",
-        remoteLightClass: "flash-green"
-      });
+      this.setState({ tvDisplayType: "image" });
     }
-
-    this.removeRemoteLightClass();
+    this.flashGreen();
   };
 
   render() {
@@ -273,7 +177,7 @@ class Projects extends React.Component {
       return liArr;
     })();
 
-    if (this.state.tvDisplayType === "projlist") {
+    if (this.state.tvDisplayType === "guide") {
       var projArr = projectData.map((project, ind) => {
         return (
           <li
@@ -318,7 +222,7 @@ class Projects extends React.Component {
                 alt={project.alt}
               />
             </a>
-          ) : this.state.tvDisplayType === "currprojinfo" ? (
+          ) : this.state.tvDisplayType === "info" ? (
             <div className="project-info project-link">
               <h2>{project.title}</h2>
               <p>{project.description}</p>
