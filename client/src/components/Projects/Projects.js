@@ -1,9 +1,7 @@
 import React from "react";
 import projectData from "../../data/projects";
 import ProjectRemote from "./ProjectRemote";
-import Guide from "./Guide";
-import Image from "./Image";
-import Info from "./Info";
+import ProjectScreen from "./ProjectScreen";
 
 class Projects extends React.Component {
   constructor(props) {
@@ -175,33 +173,24 @@ class Projects extends React.Component {
       prevProj,
       state
     } = this;
+
     const {
       currProjInd,
       tvDisplayType,
       remoteLightClass,
       projIntervalId
     } = state;
-    const project = projectData[currProjInd];
 
     return (
       <div className="project-tv-remote-container">
-        <div className="project-container">
-          {tvDisplayType === "image" ? (
-            <Image project={project} onOpenProject={onOpenProject} />
-          ) : tvDisplayType === "info" ? (
-            <Info project={project} />
-          ) : (
-            <Guide
-              projectData={projectData}
-              remoteSetInd={remoteSetInd}
-              guide={guide}
-              currProjInd={currProjInd}
-            />
-          )}
-          <div className="top-tv-base" />
-          <div className="bottom-tv-base" />
-        </div>
-
+        <ProjectScreen
+          currProjInd={currProjInd}
+          tvDisplayType={tvDisplayType}
+          onOpenProject={onOpenProject}
+          guide={guide}
+          projectData={projectData}
+          remoteSetInd={remoteSetInd}
+        />
         <ProjectRemote
           remoteSetInd={remoteSetInd}
           changeAuto={changeAuto}
