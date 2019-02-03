@@ -1,4 +1,5 @@
 import React from "react";
+import RemoteButton from "./RemoteButton";
 
 export default function ProjectRemote({
   remoteSetInd,
@@ -17,13 +18,9 @@ export default function ProjectRemote({
     let liArr = [];
     for (let i = 0; i <= 9; i++) {
       liArr.push(
-        <li
-          className="projects-remote-input"
-          key={`remote-${i}`}
-          onClick={() => remoteSetInd(i)}
-        >
-          <button className="projects-remote-input-div">{i}</button>
-        </li>
+        <RemoteButton key={`remote-${i}`} onClick={() => remoteSetInd(i)}>
+          {i}
+        </RemoteButton>
       );
     }
     return liArr;
