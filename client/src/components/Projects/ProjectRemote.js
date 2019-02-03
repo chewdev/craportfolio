@@ -1,5 +1,13 @@
 import React from "react";
 import RemoteButton from "./RemoteButton";
+import Play from "./Play";
+import Pause from "./Pause";
+import Up from "./Up";
+import Left from "./Left";
+import Right from "./Right";
+import Down from "./Down";
+import RemoteRow from "./RemoteRow";
+import LightIndicator from "./LightIndicator";
 
 export default function ProjectRemote({
   remoteSetInd,
@@ -27,100 +35,45 @@ export default function ProjectRemote({
   })();
   return (
     <ul className="projects-remote">
-      <li className="projects-remote-number-li projects-remote-number-li--container">
-        <ul className="projects-remote-number-ul projects-remote-number-ul--power">
-          <li className="projects-remote-input" onClick={changeAuto}>
-            <button className="projects-remote-input-div">
-              {projIntervalId === null ? (
-                <i className="fas fa-play" />
-              ) : (
-                <i className="fas fa-pause" />
-              )}
-            </button>
-          </li>
-          <li className="projects-remote-input projects-remote-input--power">
-            <div className={`projects-remote-power-ind ${remoteLightClass}`} />
-          </li>
-        </ul>
-      </li>
-      <li className="projects-remote-number-li projects-remote-number-li--container">
-        <ul className="projects-remote-number-ul projects-remote-number-ul--arrows">
-          <li
-            className="projects-remote-input projects-remote-input--guide"
-            onClick={guide}
-          >
-            <button className="projects-remote-input-div projects-remote-input-div--text">
-              {" "}
-              GUIDE{" "}
-            </button>
-          </li>
-          <li
-            className="projects-remote-input projects-remote-input--info"
-            onClick={info}
-          >
-            <button className="projects-remote-input-div projects-remote-input-div--text">
-              {" "}
-              INFO{" "}
-            </button>
-          </li>
-        </ul>
-      </li>
-      <li className="projects-remote-number-li projects-remote-number-li--container">
-        <ul className="projects-remote-number-ul projects-remote-number-ul--arrows">
-          <li className="projects-remote-input" onClick={up}>
-            <button className="projects-remote-input-div">
-              {" "}
-              <i className="fas fa-chevron-up" />{" "}
-            </button>
-          </li>
-        </ul>
-      </li>
-      <li className="projects-remote-number-li projects-remote-number-li--container">
-        <ul className="projects-remote-number-ul projects-remote-number-ul--arrows">
-          <li className="projects-remote-input" onClick={prevProj}>
-            <button className="projects-remote-input-div">
-              {" "}
-              <i className="fas fa-chevron-left" />{" "}
-            </button>
-          </li>
-          <li
-            className="projects-remote-input projects-remote-input--ok"
-            onClick={ok}
-          >
-            <button className="projects-remote-input-div projects-remote-input-div--ok">
-              OK
-            </button>
-          </li>
-          <li className="projects-remote-input" onClick={nextProj}>
-            <button className="projects-remote-input-div">
-              {" "}
-              <i className="fas fa-chevron-right" />{" "}
-            </button>
-          </li>
-        </ul>
-      </li>
-      <li className="projects-remote-number-li projects-remote-number-li--container">
-        <ul className="projects-remote-number-ul projects-remote-number-ul--arrows">
-          <li className="projects-remote-input" onClick={down}>
-            <button className="projects-remote-input-div">
-              {" "}
-              <i className="fas fa-chevron-down" />{" "}
-            </button>
-          </li>
-        </ul>
-      </li>
-      <li className="projects-remote-number-li">
-        <ul className="projects-remote-number-ul">{liArr.slice(1, 4)}</ul>
-      </li>
-      <li className="projects-remote-number-li">
-        <ul className="projects-remote-number-ul">{liArr.slice(4, 7)}</ul>
-      </li>
-      <li className="projects-remote-number-li">
-        <ul className="projects-remote-number-ul">{liArr.slice(7, 10)}</ul>
-      </li>
-      <li>
-        <ul className="projects-remote-number-ul">{liArr.slice(0, 1)}</ul>
-      </li>
+      <RemoteRow container={true} power={true}>
+        <RemoteButton onClick={changeAuto}>
+          {projIntervalId === null ? <Play /> : <Pause />}
+        </RemoteButton>
+        <LightIndicator remoteLightClass={remoteLightClass} />
+      </RemoteRow>
+      <RemoteRow container={true} arrows={true}>
+        <RemoteButton guide={true} onClick={guide}>
+          GUIDE
+        </RemoteButton>
+        <RemoteButton guide={true} onClick={info}>
+          INFO
+        </RemoteButton>
+      </RemoteRow>
+      <RemoteRow container={true} arrows={true}>
+        <RemoteButton onClick={up}>
+          <Up />
+        </RemoteButton>
+      </RemoteRow>
+      <RemoteRow container={true} arrows={true}>
+        <RemoteButton onClick={prevProj}>
+          <Left />
+        </RemoteButton>
+        <RemoteButton ok={true} onClick={ok}>
+          OK
+        </RemoteButton>
+        <RemoteButton onClick={nextProj}>
+          <Right />
+        </RemoteButton>
+      </RemoteRow>
+      <RemoteRow container={true} arrows={true}>
+        <RemoteButton onClick={down}>
+          <Down />
+        </RemoteButton>
+      </RemoteRow>
+      <RemoteRow>{liArr.slice(1, 4)}</RemoteRow>
+      <RemoteRow>{liArr.slice(4, 7)}</RemoteRow>
+      <RemoteRow>{liArr.slice(7, 10)}</RemoteRow>
+      <RemoteRow>{liArr.slice(0, 1)}</RemoteRow>
     </ul>
   );
 }
