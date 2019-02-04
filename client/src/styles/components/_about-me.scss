@@ -145,22 +145,17 @@
   height: 50%;
 }
 .about-me__chair {
-  background: url("./imgs/top-chair.jpg");
+  background-image: url("./imgs/top-chair.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   width: 4rem;
   height: 4rem;
   box-shadow: 0.3rem -0.35rem 0.15rem 0.1rem rgba(0, 0, 0, 0.3);
-  &--right {
-    background: url("./imgs/bottom-chair.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 4rem;
-    height: 4rem;
-    box-shadow: 0.3rem -0.35rem 0.15rem 0.1rem rgba(0, 0, 0, 0.3);
+  &--bottom {
+    background-image: url("./imgs/bottom-chair.jpg");
   }
 }
-.table-container {
+.tablet-container {
   font-size: 3px;
   box-sizing: content-box;
   @media (max-width: 300px) {
