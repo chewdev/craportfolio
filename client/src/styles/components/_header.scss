@@ -3,12 +3,14 @@
   position: fixed;
   top: 0;
   width: 100%;
+  max-width: 1200px;
   z-index: 99999;
 }
 
 .header-spacing {
   height: 6rem;
   width: 100%;
+  max-width: 1200px;
 }
 
 .header__tape {
@@ -51,11 +53,15 @@
   flex-direction: column;
   align-items: center;
   padding: 0;
-  position: fixed;
-  top: 0.5rem;
+  position: absolute;
+  top: 1rem;
   right: calc(20% - 2rem);
   transition: right 0.4s ease-in, top 0.4s ease-in, transform 0.4s ease-in,
     opacity 0.4s ease-in;
+
+  @media (max-width: 400px) {
+    transform: scale(0.8);
+  }
 
   &_animate {
     animation: fadeIn 1.5s ease-in;
@@ -67,10 +73,6 @@
     text-align: center;
   }
 
-  @media (max-width: 400px) {
-    transform: scale(0.8);
-  }
-
   &:hover {
     cursor: pointer;
     transform: translateY(0.5rem);
@@ -79,6 +81,7 @@
   &:nth-of-type(2) {
     right: calc(40% - 2rem);
   }
+
   &:nth-of-type(3) {
     right: calc(60% - 2rem);
   }
@@ -93,8 +96,8 @@
   }
 
   &_hide {
+    position: absolute;
     top: 0.25rem;
-    position: fixed;
     right: 0.25rem;
     transform: scale(0.6);
     opacity: 0;
