@@ -1,5 +1,5 @@
 .about-me-layout {
-  background: $light-grey;
+  background: $main-grey;
   width: 100%;
   min-width: 260px;
   display: flex;
@@ -9,13 +9,13 @@
 
   @media (min-width: 800px) {
     background: repeating-linear-gradient(
-      #aaaaaa,
-      #999999 24.5%,
-      #666666 24.75%,
-      #555555 25%
+      lighten($main-grey, 15%),
+      lighten($main-grey, 10%) 24.5%,
+      $main-grey 24.75%,
+      darken($main-grey, 5%) 25%
     );
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: stretch;
   }
 }
@@ -26,31 +26,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  text-shadow: 2px -2px 2px rgba(0, 0, 0, 0.75);
 
   @media (min-width: 800px) {
     padding-bottom: 5rem;
   }
-
-  @media (min-width: 1040px) {
-    background: url("./imgs/grass.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 40%;
-  }
 }
 
 .about-me-container {
-  background: $main-blue;
-  border: 0.75rem solid #666666;
+  background: $bright-purple;
+  border: 0.75rem solid $main-brown;
   border-radius: 1rem;
-  color: lighten($light-grey, 40%);
+  color: $main-brown;
   width: 17.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0.75rem -1.25rem 0.5rem 0.25rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0.75rem -0.75rem 0.5rem 0.25rem rgba(0, 0, 0, 0.1);
 
   h2 {
     padding: $m-size;
@@ -58,19 +50,19 @@
     font-size: 1.7rem;
     font-weight: 400;
     line-height: 1.2;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid currentColor;
     margin-bottom: $s-size;
-    opacity: 0.7;
+    color: inherit;
   }
 
   p {
-    opacity: 0.7;
     padding: $s-size $m-size;
     font-size: 0.8rem;
     font-weight: 400;
     line-height: 1.2;
     letter-spacing: 0.05rem;
     width: 100%;
+    color: inherit;
   }
 }
 
@@ -79,24 +71,21 @@
 
   & em {
     font-size: 1.25em;
+    color: inherit;
   }
 }
 
 .about-me__table-container {
-  background: url("./imgs/table.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: linear-gradient($main-brown, $main-brown);
   border-radius: 2rem;
-  color: #fff;
   width: 17.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  box-shadow: 0.75rem -1.25rem 0.5rem 0.25rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0.75rem -0.75rem 0.5rem 0.25rem rgba(0, 0, 0, 0.15);
 
   h2 {
-    opacity: 0.9;
     text-align: center;
     font-size: $l-size;
     padding: $m-size;
@@ -104,27 +93,9 @@
     font-weight: 400;
     line-height: 1.2;
     letter-spacing: 3px;
-    border-bottom: 1px solid white;
+    color: $bright-purple;
+    border-bottom: 1px solid currentColor;
     margin-bottom: -0.5rem;
-  }
-
-  p {
-    padding: 0 $m-size;
-    opacity: 0.9;
-    font-size: 0.8rem;
-    font-weight: 400;
-    line-height: 1.2;
-    letter-spacing: 0.1rem;
-  }
-
-  span {
-    padding: 0 $m-size;
-    opacity: 0.9;
-    font-size: 1rem;
-    font-weight: 400;
-    letter-spacing: 0.125rem;
-    line-height: 1.3;
-    text-align: center;
   }
 }
 
@@ -138,13 +109,6 @@
 
   @media (min-width: 800px) {
     padding-top: 5rem;
-  }
-
-  @media (min-width: 1040px) {
-    background: url("./imgs/grass.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 40%;
   }
 }
 
@@ -165,15 +129,25 @@
 }
 
 .about-me__chair {
-  background-image: url("./imgs/top-chair.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: linear-gradient(
+    to bottom,
+    darken($main-brown, 12%),
+    darken($main-brown, 12%) 20%,
+    $main-brown 20%,
+    $main-brown
+  );
   width: 4rem;
   height: 4rem;
-  box-shadow: 0.3rem -0.35rem 0.15rem 0.1rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0.3rem -0.3rem 0.25rem 0.1rem rgba(0, 0, 0, 0.2);
 
   &--bottom {
-    background-image: url("./imgs/bottom-chair.jpg");
+    background: linear-gradient(
+      to top,
+      darken($main-brown, 12%),
+      darken($main-brown, 12%) 20%,
+      $main-brown 20%,
+      $main-brown
+    );
   }
 }
 

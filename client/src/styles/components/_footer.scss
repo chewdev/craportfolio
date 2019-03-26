@@ -5,8 +5,16 @@
   height: 3rem;
   justify-content: center;
   align-items: center;
-  background: #000000;
-  color: #ffffff;
+  background: $main-brown;
+  color: $main-grey;
+
+  h3 {
+    color: $main-grey;
+
+    i {
+      color: $bright-purple;
+    }
+  }
 }
 
 .coffee-icon {

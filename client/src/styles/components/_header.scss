@@ -71,6 +71,11 @@
     font-weight: 700;
     width: 100%;
     text-align: center;
+    color: $bright-purple;
+
+    i {
+      color: inherit;
+    }
   }
 
   &:hover {
@@ -88,11 +93,6 @@
 
   &:nth-of-type(4) {
     right: calc(80% - 2rem);
-  }
-
-  h3 {
-    margin: 0 auto;
-    color: $main-blue;
   }
 
   &_hide {

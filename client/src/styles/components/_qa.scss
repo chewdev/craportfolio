@@ -1,6 +1,7 @@
 .question-option {
   margin-bottom: 0.9rem;
   line-height: 0.9;
+  color: $bright-purple;
 
   &:first-of-type {
     margin-top: 0.25rem;
@@ -11,8 +12,6 @@
   }
 
   &-button {
-    // background: inherit;
-    // border: none;
     background: none;
     color: inherit;
     border: none;

@@ -6,13 +6,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: $light-grey;
   background: linear-gradient(
-    #666666,
-    #999999 25%,
-    #aaaaaa 50%,
-    #999999 75%,
-    #666666 100%
+    $main-grey,
+    lighten($main-grey, 10%) 25%,
+    lighten($main-grey, 15%) 50%,
+    lighten($main-grey, 10%) 75%,
+    $main-grey 100%
   );
 }
 
@@ -27,8 +26,8 @@
   width: 17.5rem;
   margin: 0 auto;
   font-family: "Indie Flower", cursive;
-  border: 0.25rem solid black;
-  color: $main-blue;
+  border: 0.25rem solid $main-brown;
+  color: $dark-purple;
   padding: $m-size;
   border-radius: 0.25rem 0.25rem 0 0;
   background: white;
@@ -41,12 +40,12 @@
   &-whiteboard-bottom {
     width: 17.5rem;
     height: 1.5rem;
-    border: 0.25rem solid black;
+    border: 0.25rem solid $main-brown;
     border-top: none;
     transform: skewX(-45deg) translate(-0.75rem, 0);
     margin: 0 auto;
     border-radius: 0 0 0.25rem 0.25rem;
-    box-shadow: 0.75rem 0.5rem 0 0 black;
+    box-shadow: 1rem 0.5rem 1rem 0.25rem rgba(0, 0, 0, 0.2);
     background: white;
     display: flex;
     align-items: center;
@@ -62,6 +61,7 @@
 
   &-label {
     align-self: flex-start;
+    color: inherit;
   }
 
   &-input-div {
@@ -70,7 +70,7 @@
 
     &:before {
       content: "X";
-      color: $main-red;
+      color: $bright-purple;
       font-size: $l-size;
       padding-bottom: 0.25rem;
       line-height: 1;
@@ -80,13 +80,15 @@
   &-contactinput {
     width: 100%;
     border: none;
-    border-bottom: 1px solid $main-blue;
+    border-bottom: 1px solid currentColor;
     margin-bottom: $m-size;
     font-family: cursive, "Indie Flower";
     line-height: 1;
     font-size: $m-size;
     padding-left: 0.5rem;
     background: inherit;
+    color: inherit;
+    font-family: inherit;
   }
 
   &-label-error-div {
@@ -104,8 +106,8 @@
     background: repeating-linear-gradient(
       white,
       white 0.95rem,
-      $main-blue 0.95rem,
-      $main-blue 1rem
+      $dark-purple 0.95rem,
+      $dark-purple 1rem
     );
     line-height: 1rem;
     resize: none;
@@ -115,12 +117,13 @@
     font-family: cursive, "Indie Flower";
     overflow: hidden;
     margin-bottom: 0.8rem;
+    font-family: inherit;
   }
 
   &-submit {
     border: none;
-    color: black;
-    border-bottom: 1px solid $main-blue;
+    color: inherit;
+    border-bottom: 1px solid currentColor;
     background: inherit;
     cursor: pointer;
     font-family: "Indie Flower", cursive;
@@ -170,10 +173,11 @@
 .marker-cap {
   width: 1rem;
   height: 0.35rem;
-  background: #000000;
+  background: $dark-purple;
   transform: translateY(-0.2rem);
-  box-shadow: #111111 1px 1px, #111111 2px 2px, #111111 3px 3px, #111111 4px 4px,
-    #111111 5px 5px;
+  box-shadow: lighten($dark-purple, 5%) 1px 1px,
+    lighten($dark-purple, 5%) 2px 2px, lighten($dark-purple, 5%) 3px 3px,
+    lighten($dark-purple, 5%) 4px 4px, lighten($dark-purple, 5%) 5px 5px;
   border-radius: 0 0.25rem 0.25rem 0;
 }
 
@@ -183,12 +187,12 @@
   line-height: 1.5;
   font-size: $s-size;
   padding-left: 1rem;
-  color: #555555;
-  background: #000000;
+  color: $main-grey;
+  background: #000;
   transform: translateY(-0.5rem) skewX(10deg);
   position: relative;
-  box-shadow: #333333 1px 1px, #333333 2px 2px, #333333 3px 3px, #333333 4px 4px,
-    #333333 5px 5px, #333333 6px 6px, #333333 7px 7px, #333333 8px 8px,
-    #333333 9px 9px;
+  box-shadow: #000 1px 1px, #000 2px 2px, #000 3px 3px, #000 4px 4px,
+    #000 5px 5px, #000 6px 6px, currentColor 7px 7px, currentColor 8px 8px,
+    currentColor 9px 9px;
   border-radius: 0.25rem;
 }

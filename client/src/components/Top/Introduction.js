@@ -52,7 +52,9 @@ class Introduction extends React.Component {
           startDelay={2000}
           cursor={{ show: false }}
         >
-          <h1 className="paper-header">Chris Ewald</h1>
+          <h1 className="paper-header">
+            Chris Ewald <br /> <span>Full-Stack Developer</span>
+          </h1>
           <QA qA={this.state.qA} />
 
           <br />

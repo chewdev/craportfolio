@@ -1,5 +1,6 @@
 .projects {
-  background: url("./imgs/floor2.jpg");
+  background: linear-gradient(rgba($main-brown, 0.4), rgba($main-brown, 0.4)),
+    url("./imgs/floor2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -53,7 +54,6 @@
 .top-tv-base {
   width: 3rem;
   height: 3.6rem;
-  background: $light-grey;
   background: rgba(0, 0, 0, 0);
   border-color: darken(#555555, 30%);
   border-style: solid;
@@ -81,31 +81,25 @@
   width: 9rem;
   height: 3rem;
   background: #202020;
-  border-width: 0rem;
-  border-style: solid;
-  border-color: darken (#202020, 6%);
-  border-bottom-width: 0.4rem;
-  border-right-width: 0.2rem;
-  border-radius: 0.25rem;
   margin-bottom: -1rem;
   transform: skewX(-20deg);
+  box-shadow: 1px 1px lighten(#000, 10%), 2px 2px lighten(#000, 10%),
+    3px 3px lighten(#000, 10%), 3px 4px lighten(#000, 10%),
+    3px 5px lighten(#000, 10%);
 
   @media (min-width: 700px) {
     top: -1rem;
     width: 12rem;
     height: 4rem;
-    border-bottom-width: 0.5rem;
-    border-right-width: 0.25rem;
-    border-radius: 0.375rem;
+    box-shadow: 0.1rem 0.1rem lighten(#000, 10%),
+      0.2rem 0.2rem lighten(#000, 10%), 0.2rem 0.3rem lighten(#000, 10%),
+      0.2rem 0.4rem lighten(#000, 10%);
   }
 
   @media (min-width: 1000px) {
     top: -1rem;
     width: 17rem;
     height: 5rem;
-    border-bottom-width: 0.75rem;
-    border-right-width: 0.4rem;
-    border-radius: 0.5rem;
   }
 }
 
@@ -116,7 +110,7 @@
   list-style-type: none;
 
   &--selected {
-    background: dodgerblue;
+    background: $bright-purple;
   }
 }
 
@@ -126,9 +120,10 @@
 
   & h2 {
     text-align: center;
-    color: $main-blue;
+    color: $bright-purple;
     padding: 0 $s-size;
     border-bottom: 1px solid #000;
+    font-size: $l-size;
   }
 
   & p {
@@ -153,7 +148,7 @@
 .projects-remote-input {
   width: 20px;
   height: 20px;
-  background: $light-grey;
+  background: $main-grey;
   border-radius: 5px;
   color: white;
   cursor: pointer;
@@ -165,13 +160,13 @@
 
   &--ok {
     border-radius: 50px;
-    background: $main-blue;
+    background: $bright-purple;
   }
 
   &--guide {
     width: 30px;
     height: 15px;
-    background: $main-blue;
+    background: $bright-purple;
   }
 
   &-div {
@@ -180,8 +175,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: $main-grey;
     border-radius: 5px;
-    background: $light-grey;
     border-width: 1px;
     border-color: darken($light-grey, 25%);
     color: #000;
@@ -193,8 +188,8 @@
 
     &--text {
       font-size: 8px;
-      color: white;
-      background: $main-blue;
+      color: #000;
+      background: $bright-purple;
     }
 
     &--ok {
@@ -203,7 +198,11 @@
       border-radius: 50px;
       text-align: center;
       color: white;
-      background: $main-blue;
+      background: $bright-purple;
+    }
+
+    i {
+      color: inherit;
     }
   }
 

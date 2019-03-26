@@ -1,5 +1,6 @@
 .background-div {
-  background: url("./imgs/floor1.jpg");
+  background: linear-gradient(rgba($main-brown, 0.4), rgba($main-brown, 0.4)),
+    url("./imgs/floor1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 95vh;
@@ -8,7 +9,6 @@
   min-width: 260px;
   display: flex;
   flex-direction: column;
-  color: $main-blue;
 }
 
 .box-layout {

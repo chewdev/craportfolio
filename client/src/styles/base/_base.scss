@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: $dark-purple;
 }
 
 html {
@@ -26,7 +27,7 @@ body {
   font-family: "Lato", sans-serif;
   font-size: $m-size;
   line-height: 1.6;
-  background: $grey;
+  background: $main-grey;
 }
 
 button {
