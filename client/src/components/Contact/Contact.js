@@ -124,7 +124,7 @@ export default class Contact extends React.Component {
           contactError={this.state.contactError}
         />
         <LazyLoad offset={600} throttle={25}>
-          <div>
+          <>
             <div className={`contact-form`}>
               <SuccessfulSubmit submitted={this.state.submitted} />
               <form
@@ -177,7 +177,7 @@ export default class Contact extends React.Component {
               </form>
             </div>
             <WhiteboardBottom />
-          </div>
+          </>
         </LazyLoad>
       </section>
     );
