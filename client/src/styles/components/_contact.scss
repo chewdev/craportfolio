@@ -6,13 +6,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    $main-grey,
-    lighten($main-grey, 10%) 25%,
-    lighten($main-grey, 15%) 50%,
-    lighten($main-grey, 10%) 75%,
-    $main-grey 100%
-  );
+  background: $dark-purple;
+  clip-path: polygon(0 0, 100% 10vh, 100% 100%, 0 100%);
+  padding-top: calc(10vh + 5rem);
 }
 
 .contact-error {
@@ -26,11 +22,11 @@
   width: 17.5rem;
   margin: 0 auto;
   font-family: "Indie Flower", cursive;
-  border: 0.25rem solid $main-brown;
+  border: 0.25rem solid $black;
   color: $dark-purple;
   padding: $m-size;
   border-radius: 0.25rem 0.25rem 0 0;
-  background: white;
+  background: $main-grey;
   height: 27.5rem;
 
   &-form {
@@ -40,13 +36,13 @@
   &-whiteboard-bottom {
     width: 17.5rem;
     height: 1.5rem;
-    border: 0.25rem solid $main-brown;
+    border: 0.25rem solid $black;
     border-top: none;
     transform: skewX(-45deg) translate(-0.75rem, 0);
     margin: 0 auto;
     border-radius: 0 0 0.25rem 0.25rem;
     box-shadow: 1rem 0.5rem 1rem 0.25rem rgba(0, 0, 0, 0.2);
-    background: white;
+    background: $main-grey;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -104,8 +100,8 @@
 
   &-comments-area {
     background: repeating-linear-gradient(
-      white,
-      white 0.95rem,
+      $main-grey,
+      $main-grey 0.95rem,
       $dark-purple 0.95rem,
       $dark-purple 1rem
     );
@@ -163,7 +159,7 @@
 .marker-body {
   width: 2.5rem;
   height: 0.25rem;
-  background: #000000;
+  background: $black;
   transform: translateY(-0.2rem);
   box-shadow: #111111 1px 1px, #111111 2px 2px, #111111 3px 3px, #111111 4px 4px,
     #111111 5px 5px;
@@ -188,11 +184,11 @@
   font-size: $s-size;
   padding-left: 1rem;
   color: $main-grey;
-  background: #000;
+  background: $black;
   transform: translateY(-0.5rem) skewX(10deg);
   position: relative;
-  box-shadow: #000 1px 1px, #000 2px 2px, #000 3px 3px, #000 4px 4px,
-    #000 5px 5px, #000 6px 6px, currentColor 7px 7px, currentColor 8px 8px,
+  box-shadow: $black 1px 1px, $black 2px 2px, $black 3px 3px, $black 4px 4px,
+    $black 5px 5px, $black 6px 6px, currentColor 7px 7px, currentColor 8px 8px,
     currentColor 9px 9px;
   border-radius: 0.25rem;
 }

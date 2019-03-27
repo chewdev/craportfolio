@@ -7,7 +7,6 @@ import QuestionInput from "./QuestionInput";
 class QA extends React.Component {
   constructor(props) {
     super(props);
-    this.qA = [];
     this.state = {
       currentText: "",
       textInput: "",
@@ -18,12 +17,6 @@ class QA extends React.Component {
     };
     this.onTextInputChange = this.onTextInputChange.bind(this);
     this.getAnswer = this.getAnswer.bind(this);
-  }
-
-  componentWillMount() {
-    if (this.qA.length < 1 && this.props.qA) {
-      this.qA = this.props.qA;
-    }
   }
 
   onTextInputChange(e) {
@@ -41,7 +34,7 @@ class QA extends React.Component {
       return this.setState({ questionArr: [], textInput });
     }
 
-    const questionArr = bestMatches(textInput, this.qA);
+    const questionArr = bestMatches(textInput, this.props.qA);
     return this.setState({
       currentText: "",
       questionArr,
@@ -52,7 +45,7 @@ class QA extends React.Component {
   getAnswer(question = null) {
     const answerObj =
       question !== null
-        ? this.qA.find(
+        ? this.props.qA.find(
             val =>
               val.question === question || val.question === this.state.textInput
           )
@@ -71,9 +64,9 @@ class QA extends React.Component {
   }
 
   render() {
-    return (
+    return !this.props.show ? null : (
       <div className="paper-qa">
-        <label className="paper-text" htmlFor="knowme">
+        <label className="paper-text paper-text--center" htmlFor="knowme">
           Get to know me:
         </label>
         <QuestionInput
@@ -103,5 +96,10 @@ class QA extends React.Component {
     );
   }
 }
+
+QA.defaultProps = {
+  qA: [],
+  show: false
+};
 
 export default QA;

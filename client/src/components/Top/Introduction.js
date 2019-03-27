@@ -12,9 +12,14 @@ class Introduction extends React.Component {
     this.msClass = this.isIE || this.isEdge ? " paper-text--ms" : "";
     this.chromeClass = this.isChrome ? " paper-text--chrome" : "";
     this.state = {
-      qA: []
+      qA: [],
+      showQA: false
     };
   }
+
+  canShowQA = () => {
+    this.setState({ showQA: true });
+  };
 
   componentDidMount() {
     if (this.state.qA.length === 0) {
@@ -51,22 +56,13 @@ class Introduction extends React.Component {
           stdTypingDelay={15}
           startDelay={2000}
           cursor={{ show: false }}
+          onTypingDone={() => this.canShowQA()}
         >
           <h1 className="paper-header">
             Chris Ewald <br /> <span>Full-Stack Developer</span>
           </h1>
-          <QA qA={this.state.qA} />
-
-          <br />
-          <p className={`paper-text ${this.chromeClass}`}>
-            Have more questions? Contact me
-          </p>
         </Typist>
-        <div className="paper-contact-link-div">
-          <a href="#contact" className="paper-contact-link-a">
-            <i className="fas fa-chevron-down paper-contact-link" />
-          </a>
-        </div>
+        <QA qA={this.state.qA} show={this.state.showQA} />
       </PaperBoxLayout>
     );
   }

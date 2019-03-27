@@ -5,14 +5,14 @@
   height: 3rem;
   justify-content: center;
   align-items: center;
-  background: $main-brown;
   color: $main-grey;
+  background: $main-grey;
 
   h3 {
-    color: $main-grey;
+    color: $dark-purple;
 
     i {
-      color: $bright-purple;
+      color: $black;
     }
   }
 }

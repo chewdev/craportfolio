@@ -1,19 +1,17 @@
 .about-me-layout {
-  background: $main-grey;
+  background: $dark-purple;
   width: 100%;
   min-width: 260px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  margin-top: -10vh;
+  padding: 10vh 0;
+  clip-path: polygon(0 10vh, 100% 0, 100% calc(100% - 10vh), 0 100%);
 
   @media (min-width: 800px) {
-    background: repeating-linear-gradient(
-      lighten($main-grey, 15%),
-      lighten($main-grey, 10%) 24.5%,
-      $main-grey 24.75%,
-      darken($main-grey, 5%) 25%
-    );
+    background: $dark-purple;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: stretch;
@@ -34,9 +32,9 @@
 
 .about-me-container {
   background: $bright-purple;
-  border: 0.75rem solid $main-brown;
+  border: 0.75rem solid $main-grey;
   border-radius: 1rem;
-  color: $main-brown;
+  color: $black;
   width: 17.5rem;
   display: flex;
   flex-direction: column;
@@ -45,11 +43,11 @@
   box-shadow: 0.75rem -0.75rem 0.5rem 0.25rem rgba(0, 0, 0, 0.1);
 
   h2 {
-    padding: $m-size;
+    padding: $s-size;
     text-align: center;
     font-size: 1.7rem;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 1;
     border-bottom: 1px solid currentColor;
     margin-bottom: $s-size;
     color: inherit;
@@ -76,24 +74,24 @@
 }
 
 .about-me__table-container {
-  background: linear-gradient($main-brown, $main-brown);
+  background: $main-grey;
   border-radius: 2rem;
   width: 17.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   box-shadow: 0.75rem -0.75rem 0.5rem 0.25rem rgba(0, 0, 0, 0.15);
 
   h2 {
     text-align: center;
-    font-size: $l-size;
-    padding: $m-size;
+    font-size: 1.7rem;
+    padding: $s-size;
     padding-bottom: 0.5rem;
     font-weight: 400;
-    line-height: 1.2;
-    letter-spacing: 3px;
-    color: $bright-purple;
+    line-height: 1;
+    letter-spacing: 0;
+    color: $black;
     border-bottom: 1px solid currentColor;
     margin-bottom: -0.5rem;
   }
@@ -120,21 +118,13 @@
   width: 17.5rem;
 }
 
-.about-me__chair-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 50%;
-}
-
 .about-me__chair {
   background: linear-gradient(
     to bottom,
-    darken($main-brown, 12%),
-    darken($main-brown, 12%) 20%,
-    $main-brown 20%,
-    $main-brown
+    $bright-purple,
+    $bright-purple 20%,
+    $main-grey 20%,
+    $main-grey
   );
   width: 4rem;
   height: 4rem;
@@ -143,10 +133,10 @@
   &--bottom {
     background: linear-gradient(
       to top,
-      darken($main-brown, 12%),
-      darken($main-brown, 12%) 20%,
-      $main-brown 20%,
-      $main-brown
+      $bright-purple,
+      $bright-purple 20%,
+      $main-grey 20%,
+      $main-grey
     );
   }
 }
@@ -155,7 +145,7 @@
   font-size: 3px;
   box-sizing: content-box;
 
-  @media (max-width: 300px) {
+  @media (max-width: 350px) {
     font-size: 2px;
   }
 }

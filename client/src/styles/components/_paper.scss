@@ -8,6 +8,7 @@
   animation: fadeIn 1s ease-out;
   align-self: center;
   position: relative;
+  padding-left: 3rem;
 }
 
 .paper-qa {
@@ -23,6 +24,7 @@
     width: 1.7rem;
     height: 3.3rem;
     animation: moveInTopLeft 2s ease-out;
+    margin-left: -3rem;
     background: url("./imgs/tape-left-cropped-rot.png");
     background-size: contain;
   }
@@ -37,7 +39,7 @@
 }
 
 .paper-header {
-  margin: -0.5rem 0 0.4rem 3rem;
+  margin: -0.6rem 0 0.4rem 0;
   text-align: center;
   line-height: 1;
   font-size: 1.4rem;
@@ -51,12 +53,20 @@
 
 .paper-text {
   padding-top: 0.25rem;
-  margin: 0.35rem 0.25rem 0 3.25rem;
+  margin: 0.35rem 0.25rem 0 0.2rem;
   font-size: 0.9rem;
   line-height: 0.95;
 
   &-mtop {
     margin-top: 0.5rem;
+  }
+
+  &--center {
+    margin-left: 0;
+    text-align: center;
+    display: block;
+    text-transform: capitalize;
+    font-size: 1.2rem;
   }
 
   &--chrome {
@@ -78,19 +88,23 @@
     border: none;
     font-family: inherit;
     height: 5.6rem;
-    width: 13.5rem;
+    width: 100%;
     resize: none;
     overflow: hidden;
     color: $bright-purple;
+    padding: 0.2rem;
+    margin-left: 0;
 
     &::placeholder {
       color: $main-grey;
+      text-align: center;
     }
   }
 }
 
 .paper-ask {
-  margin-left: 8rem;
+  margin: 0 auto;
+  display: block;
   background: inherit;
   border: none;
   border-bottom: 1px solid currentColor;

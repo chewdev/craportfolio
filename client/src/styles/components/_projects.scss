@@ -1,8 +1,5 @@
 .projects {
-  background: linear-gradient(rgba($main-brown, 0.4), rgba($main-brown, 0.4)),
-    url("./imgs/floor2.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: $bright-purple;
   width: 100%;
   min-width: 260px;
   display: flex;
@@ -27,6 +24,7 @@
   width: 100%;
   height: 100%;
   animation: fadeInOpacity 1s ease-in;
+  background: $black;
 }
 
 .project-link {
@@ -83,17 +81,17 @@
   background: #202020;
   margin-bottom: -1rem;
   transform: skewX(-20deg);
-  box-shadow: 1px 1px lighten(#000, 10%), 2px 2px lighten(#000, 10%),
-    3px 3px lighten(#000, 10%), 3px 4px lighten(#000, 10%),
-    3px 5px lighten(#000, 10%);
+  box-shadow: 1px 1px lighten($black, 10%), 2px 2px lighten($black, 10%),
+    3px 3px lighten($black, 10%), 3px 4px lighten($black, 10%),
+    3px 5px lighten($black, 10%);
 
   @media (min-width: 700px) {
     top: -1rem;
     width: 12rem;
     height: 4rem;
-    box-shadow: 0.1rem 0.1rem lighten(#000, 10%),
-      0.2rem 0.2rem lighten(#000, 10%), 0.2rem 0.3rem lighten(#000, 10%),
-      0.2rem 0.4rem lighten(#000, 10%);
+    box-shadow: 0.1rem 0.1rem lighten($black, 10%),
+      0.2rem 0.2rem lighten($black, 10%), 0.2rem 0.3rem lighten($black, 10%),
+      0.2rem 0.4rem lighten($black, 10%);
   }
 
   @media (min-width: 1000px) {
@@ -116,13 +114,13 @@
 
 .project-info {
   padding: 0 $s-size;
-  overflow: scroll;
+  overflow: auto;
 
   & h2 {
     text-align: center;
     color: $bright-purple;
     padding: 0 $s-size;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid $black;
     font-size: $l-size;
   }
 
@@ -179,8 +177,9 @@
     border-radius: 5px;
     border-width: 1px;
     border-color: darken($light-grey, 25%);
-    color: #000;
+    color: $black;
     border-style: outset;
+    line-height: 0.9;
 
     &:active {
       border-style: inset;
@@ -188,7 +187,7 @@
 
     &--text {
       font-size: 8px;
-      color: #000;
+      color: $black;
       background: $bright-purple;
     }
 
