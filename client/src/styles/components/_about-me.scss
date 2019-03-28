@@ -19,6 +19,11 @@
     @supports (justify-content: space-evenly) {
       justify-content: space-evenly;
     }
+
+    @supports (-ms-accelerator: true) {
+      /* Fallback for Edge only */
+      justify-content: space-around;
+    }
   }
 }
 

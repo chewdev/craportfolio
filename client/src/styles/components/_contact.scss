@@ -1,7 +1,7 @@
 .contact-section {
   min-width: 260px;
   width: 100%;
-  min-height: 40rem;
+  min-height: 47rem;
   padding: 3rem 1rem;
   display: flex;
   flex-direction: column;
@@ -14,6 +14,11 @@
   .is-visible {
     width: 100%;
     max-width: 600px;
+  }
+
+  //Set min-height for when section has not yet been lazy loaded
+  @include atPhoneLg {
+    min-height: 43rem;
   }
 }
 

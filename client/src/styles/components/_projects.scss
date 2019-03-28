@@ -6,7 +6,25 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 50rem;
+
+  // Set min-heights for when section has not been lazy loaded
+  min-height: 49rem;
+
+  @include atPhoneLg {
+    min-height: 45rem;
+  }
+
+  @include atTablet {
+    min-height: 42rem;
+  }
+
+  @include atProjectBreakpoint {
+    min-height: 37rem;
+  }
+
+  @include atDesktop {
+    min-height: 29rem;
+  }
 }
 
 .project-container {
