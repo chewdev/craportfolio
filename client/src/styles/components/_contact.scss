@@ -1,19 +1,19 @@
 .contact-section {
   min-width: 260px;
   width: 100%;
-  min-height: 47rem;
-  padding: 5rem 1rem;
+  min-height: 40rem;
+  padding: 3rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background: $dark-purple;
   clip-path: polygon(0 0, 100% 10vh, 100% 100%, 0 100%);
-  padding-top: calc(10vh + 5rem);
+  padding-top: calc(10vh + 3rem);
 
   .is-visible {
     width: 100%;
-    max-width: 800px;
+    max-width: 600px;
   }
 }
 

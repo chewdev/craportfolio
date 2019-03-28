@@ -10,11 +10,15 @@
   padding: 10vh 0;
   clip-path: polygon(0 10vh, 100% 0, 100% calc(100% - 10vh), 0 100%);
 
-  @media (min-width: 800px) {
+  @include atDesktop {
     background: $dark-purple;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: stretch;
+
+    @supports (justify-content: space-evenly) {
+      justify-content: space-evenly;
+    }
   }
 }
 
@@ -25,7 +29,7 @@
   justify-content: center;
   align-items: center;
 
-  @media (min-width: 800px) {
+  @include atDesktop {
     padding-bottom: 5rem;
   }
 }
@@ -105,7 +109,7 @@
   align-items: center;
   justify-content: center;
 
-  @media (min-width: 800px) {
+  @include atDesktop {
     padding-top: 5rem;
   }
 }
@@ -142,11 +146,11 @@
 }
 
 .tablet-container {
-  font-size: 3px;
+  font-size: 2px;
   box-sizing: content-box;
 
-  @media (max-width: 350px) {
-    font-size: 2px;
+  @include atPhoneLg {
+    font-size: 3px;
   }
 }
 

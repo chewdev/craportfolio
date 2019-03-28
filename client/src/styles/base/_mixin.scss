@@ -1,0 +1,44 @@
+// Base media queries
+@mixin mediaQuery($width) {
+  @media only screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin heightMediaQuery($height) {
+  @media only screen and (min-height: $height) {
+    @content;
+  }
+}
+
+// Screen size media queries
+@mixin atDesktop {
+  @include mediaQuery("1000px") {
+    @content;
+  }
+}
+
+@mixin atTablet {
+  @include mediaQuery("450px") {
+    @content;
+  }
+}
+
+@mixin atPhoneLg {
+  @include mediaQuery("350px") {
+    @content;
+  }
+}
+
+// Individual section media queries
+@mixin atProjectBreakpoint {
+  @include mediaQuery("540px") {
+    @content;
+  }
+}
+
+@mixin atProjectMinHeight {
+  @include heightMediaQuery("40rem") {
+    @content;
+  }
+}

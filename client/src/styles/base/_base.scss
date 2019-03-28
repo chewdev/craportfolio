@@ -7,22 +7,26 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 150%;
+  font-size: 80%;
 
-  @media (max-width: 1200px) {
-    font-size: 125%;
-  }
+  // @media only screen and (max-width: 800px) {
+  //   font-size: 125%;
+  // }
 
-  @media (max-width: 450px) {
+  // @media only screen and (min-width: 200px) {
+  //   font-size: 80%;
+  // }
+
+  @include atPhoneLg {
     font-size: 100%;
   }
 
-  @media (max-width: 350px) {
-    font-size: 80%;
+  @include atTablet {
+    font-size: 125%;
   }
 
-  @media (max-width: 200px) {
-    font-size: 60%;
+  @include atDesktop {
+    font-size: 150%;
   }
 }
 

@@ -6,19 +6,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 5rem 1rem;
-  min-height: 45rem;
+  min-height: 50rem;
 }
 
 .project-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0;
-
-  @media (min-width: 700px) {
-    padding-right: 2.5rem;
-  }
+  padding: 1rem;
 }
 
 .project-tv {
@@ -30,23 +25,20 @@
 
 .project-link {
   border: 0.3rem solid black;
-  border-radius: 0.15rem;
-  width: 17.5rem;
-  height: 15rem;
+  border-radius: 3px;
+  width: 18rem;
+  height: 20rem;
   background: #ffffff;
 
-  @media (min-width: 500px) {
+  @include atProjectBreakpoint {
     width: 24rem;
     height: 15rem;
     border-width: 0.5rem;
-    border-radius: 0.25rem;
   }
 
-  @media (min-width: 1000px) {
-    width: 40rem;
-    height: 25rem;
-    border-width: 0.6rem;
-    border-radius: 0.3rem;
+  @include atDesktop {
+    width: 32rem;
+    height: 20rem;
   }
 }
 
@@ -61,16 +53,15 @@
   z-index: 5;
   box-shadow: 0 0 0 -0.5rem darken(#555555, 30%);
 
-  @media (min-width: 700px) {
-    border-width: 1.6rem;
-    width: 4rem;
-    height: 4.8rem;
+  @include atProjectBreakpoint {
+    border-width: 1.2rem;
+    width: 3rem;
+    height: 3.6rem;
   }
 
-  @media (min-width: 1000px) {
-    border-width: 2rem;
-    width: 5rem;
-    height: 6rem;
+  @include atDesktop {
+    width: 4rem;
+    height: 4.8rem;
   }
 }
 
@@ -86,19 +77,17 @@
     3px 3px lighten($black, 10%), 3px 4px lighten($black, 10%),
     3px 5px lighten($black, 10%);
 
-  @media (min-width: 700px) {
-    top: -1rem;
-    width: 12rem;
-    height: 4rem;
+  @include atProjectBreakpoint {
+    width: 9rem;
+    height: 3rem;
     box-shadow: 0.1rem 0.1rem lighten($black, 10%),
       0.2rem 0.2rem lighten($black, 10%), 0.2rem 0.3rem lighten($black, 10%),
       0.2rem 0.4rem lighten($black, 10%);
   }
 
-  @media (min-width: 1000px) {
-    top: -1rem;
-    width: 17rem;
-    height: 5rem;
+  @include atDesktop {
+    width: 13.6rem;
+    height: 4rem;
   }
 }
 
@@ -136,12 +125,23 @@
   background: black;
   border-radius: 5px;
   width: 95px;
-  height: 250px;
+  height: 140px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  margin: 10px 0;
+  margin: 1rem 1.5rem;
+
+  @include atProjectBreakpoint {
+    width: 95px;
+    height: 250px;
+    margin: 1rem;
+  }
+
+  @include atProjectMinHeight {
+    width: 95px;
+    height: 250px;
+  }
 }
 
 .projects-remote-input {
@@ -236,6 +236,18 @@
     display: flex;
     justify-content: center;
   }
+
+  &--number {
+    display: none;
+
+    @include atProjectBreakpoint {
+      display: initial;
+    }
+
+    @include atProjectMinHeight {
+      display: initial;
+    }
+  }
 }
 
 .projects-remote-power-ind {
@@ -246,14 +258,10 @@
 
 .project-tv-remote-container {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   width: 100%;
-
-  @media (min-width: 700px) {
-    flex-direction: row;
-  }
 }
 
 .channel-name-span {

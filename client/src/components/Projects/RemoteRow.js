@@ -1,11 +1,18 @@
 import React from "react";
 import classnames from "classnames";
 
-export default function RemoteRow({ children, container, arrows, power }) {
+export default function RemoteRow({
+  children,
+  container,
+  arrows,
+  power,
+  number
+}) {
   return (
     <li
       className={classnames("projects-remote-number-li", {
-        "projects-remote-number-li--container": container
+        "projects-remote-number-li--container": container,
+        "projects-remote-number-li--number": number
       })}
     >
       <ul

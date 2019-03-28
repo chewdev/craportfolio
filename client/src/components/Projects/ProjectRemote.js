@@ -70,10 +70,10 @@ export default function ProjectRemote({
           <Down />
         </RemoteButton>
       </RemoteRow>
-      <RemoteRow>{liArr.slice(1, 4)}</RemoteRow>
-      <RemoteRow>{liArr.slice(4, 7)}</RemoteRow>
-      <RemoteRow>{liArr.slice(7, 10)}</RemoteRow>
-      <RemoteRow>{liArr.slice(0, 1)}</RemoteRow>
+      <RemoteRow number={true}>{liArr.slice(1, 4)}</RemoteRow>
+      <RemoteRow number={true}>{liArr.slice(4, 7)}</RemoteRow>
+      <RemoteRow number={true}>{liArr.slice(7, 10)}</RemoteRow>
+      <RemoteRow number={true}>{liArr.slice(0, 1)}</RemoteRow>
     </ul>
   );
 }
