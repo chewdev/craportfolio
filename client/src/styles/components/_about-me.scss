@@ -13,14 +13,10 @@
   @include atDesktop {
     background: $dark-purple;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: stretch;
 
-    @supports (justify-content: space-evenly) {
-      justify-content: space-evenly;
-    }
-
-    @supports (-ms-accelerator: true) {
+    @supports (-ms-ime-align: auto) {
       /* Fallback for Edge only */
       justify-content: space-around;
     }
