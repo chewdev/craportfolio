@@ -45,10 +45,10 @@ class QA extends React.Component {
   getAnswer(question = null) {
     const answerObj =
       question !== null
-        ? this.props.qA.find(
+        ? this.props.qA.filter(
             val =>
               val.question === question || val.question === this.state.textInput
-          )
+          )[0]
         : this.state.questionArr.length > 0 && this.state.questionArr[0];
     const answer =
       (answerObj && answerObj.answer) ||
