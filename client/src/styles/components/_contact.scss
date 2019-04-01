@@ -2,14 +2,19 @@
   min-width: 260px;
   width: 100%;
   min-height: 47rem;
+  clip-path: polygon(0 10vh, 100% 0, 100% 100%, 0 100%);
   padding: 3rem 1rem;
+  padding-top: calc(10vh + 3rem);
+  margin-top: -10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: $dark-purple;
-  clip-path: polygon(0 0, 100% 10vh, 100% 100%, 0 100%);
-  padding-top: calc(10vh + 3rem);
+  background: linear-gradient(rgba($dark-purple, 0.9), rgba($dark-purple, 0.9)),
+    url(./imgs/lets-connect.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
   .is-visible {
     width: 100%;
