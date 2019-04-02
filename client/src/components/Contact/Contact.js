@@ -131,7 +131,7 @@ export default class Contact extends React.Component {
                 className={`contact-form-form ${this.state.formClass}`}
                 onSubmit={this.onSubmit}
               >
-                <h1 className="contact-form-title">Contact</h1>
+                <h1 className="contact-form-title">Let's Connect</h1>
                 <ErrorLabelDiv
                   labelText={"Full Name:"}
                   errorText={"Name is required"}
@@ -169,11 +169,9 @@ export default class Contact extends React.Component {
                   onChangeProp={this.setSelectOption}
                   value={this.state.selectOption}
                 />
-                <input
-                  className="contact-form-submit"
-                  type="submit"
-                  value="Submit"
-                />
+                <button className="contact-form-submit">
+                  <i className="fas fa-envelope email-icon" />
+                </button>
               </form>
             </div>
             <WhiteboardBottom />

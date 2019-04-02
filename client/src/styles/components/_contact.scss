@@ -36,7 +36,7 @@
   flex-direction: column;
   align-items: center;
   width: 90%;
-  height: 32.5rem;
+  height: 31.5rem;
   margin: 0 auto;
   font-family: "Indie Flower", cursive;
   border: 0.25rem solid $black;
@@ -44,6 +44,10 @@
   padding: $m-size;
   border-radius: 0.25rem 0.25rem 0 0;
   background: $main-grey;
+
+  @include atDesktop {
+    height: 30rem;
+  }
 
   &-form {
     width: 100%;
@@ -151,13 +155,19 @@
   &-submit {
     border: none;
     color: inherit;
-    border-bottom: 1px solid currentColor;
     background: transparent;
     cursor: pointer;
-    font-family: "Indie Flower", cursive;
-    font-size: 1.2rem;
     display: block;
     margin: 0 auto;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    .email-icon {
+      font-size: 1.8rem;
+    }
   }
 }
 
