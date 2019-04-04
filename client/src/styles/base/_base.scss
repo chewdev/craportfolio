@@ -9,14 +9,6 @@ html {
   scroll-behavior: smooth;
   font-size: 80%;
 
-  // @media only screen and (max-width: 800px) {
-  //   font-size: 125%;
-  // }
-
-  // @media only screen and (min-width: 200px) {
-  //   font-size: 80%;
-  // }
-
   @include atPhoneLg {
     font-size: 100%;
   }
