@@ -267,7 +267,7 @@
     min-height: 37rem;
   }
 
-  @media screen and (min-width: 672px) {
+  @include atLgProjectBreakpoint {
     min-height: 29rem;
   }
 

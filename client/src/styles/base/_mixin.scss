@@ -37,6 +37,12 @@
   }
 }
 
+@mixin atLgProjectBreakpoint {
+  @include mediaQuery("670px") {
+    @content;
+  }
+}
+
 @mixin atProjectMinHeight {
   @include heightMediaQuery("40rem") {
     @content;
