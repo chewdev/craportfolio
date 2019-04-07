@@ -5,14 +5,17 @@ import colorGuessingGame from "../components/imgs/color-guessing-game.jpg";
 import devConnector from "../components/imgs/developerconnectornew.jpg";
 import passion from "../components/imgs/passion.jpg";
 import nowBrewing from "../components/imgs/now-brewing.jpg";
-import portfolio from "../components/imgs/portfolioContact.jpg";
+import portfolio from "../components/imgs/portfolioContact.JPG";
 import liveWorkCreate from "../components/imgs/live-work-create.jpg";
 import covenantJobTracker from "../components/imgs/covenantjobtrackeraddproject.jpg";
+
+import portfolioSmall from "../components/imgs/portfolioContactSmall.jpg";
 
 const projects = [
   {
     imgSrc: portfolio,
-    alt: "Screenshot of this portfolio's homepage",
+    imgSrcSmall: portfolioSmall,
+    alt: "Screenshot of portfolio's contact section",
     title: "Portfolio",
     description:
       "This site is built using Node.js, React, Sass, Express and MySQL. The site is built to be responsive for devices of all sizes. Form validation is implemented on both client and server side and uses an API on the backend to send email. I built this site from scratch on top of the Express framework in Node.js and React framework on the frontend. Designing, building and deploying this application gave me the realization of just how much goes into building even the smallest of custom applications.",
