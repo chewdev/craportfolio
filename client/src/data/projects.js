@@ -1,16 +1,19 @@
+// Large Images
 import budgIt from "../components/imgs/budg-it.jpg";
 import yelpCamp from "../components/imgs/yelp-camp.jpg";
 import indecisionApp from "../components/imgs/indecision-app.jpg";
 import colorGuessingGame from "../components/imgs/color-guessing-game.jpg";
-import devConnector from "../components/imgs/developerconnectornew.jpg";
+import devConnectorLarge from "../components/imgs/devConnectorLarge.jpg";
 import passion from "../components/imgs/passion.jpg";
 import nowBrewing from "../components/imgs/now-brewing.jpg";
 import portfolio from "../components/imgs/portfolioContact.jpg";
 import liveWorkCreate from "../components/imgs/live-work-create.jpg";
 import covenantLarge from "../components/imgs/covenantDashboardLarge.jpg";
 
+// Small Images
 import portfolioSmall from "../components/imgs/portfolioContactSmall.jpg";
 import covenantSmall from "../components/imgs/covenantDashboardSmall.jpg";
+import devConnectorSmall from "../components/imgs/devConnectorSmall.jpg";
 
 const projects = [
   {
@@ -52,7 +55,8 @@ const projects = [
     channelName: "CJT"
   },
   {
-    imgSrc: devConnector,
+    imgSrc: devConnectorLarge,
+    imgSrcSmall: devConnectorSmall,
     alt: 'Screenshot of Dev Connector App"',
     title: "Dev Connector App",
     description:
