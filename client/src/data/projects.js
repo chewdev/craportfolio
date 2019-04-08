@@ -5,11 +5,12 @@ import colorGuessingGame from "../components/imgs/color-guessing-game.jpg";
 import devConnector from "../components/imgs/developerconnectornew.jpg";
 import passion from "../components/imgs/passion.jpg";
 import nowBrewing from "../components/imgs/now-brewing.jpg";
-import portfolio from "../components/imgs/portfolioContact.JPG";
+import portfolio from "../components/imgs/portfolioContact.jpg";
 import liveWorkCreate from "../components/imgs/live-work-create.jpg";
-import covenantJobTracker from "../components/imgs/covenantjobtrackeraddproject.jpg";
+import covenantLarge from "../components/imgs/covenantDashboardLarge.jpg";
 
 import portfolioSmall from "../components/imgs/portfolioContactSmall.jpg";
+import covenantSmall from "../components/imgs/covenantDashboardSmall.jpg";
 
 const projects = [
   {
@@ -32,7 +33,8 @@ const projects = [
     channelName: "CEP"
   },
   {
-    imgSrc: covenantJobTracker,
+    imgSrc: covenantLarge,
+    imgSrcSmall: covenantSmall,
     alt: "Screenshot of Covenant Job Tracking App",
     title: "Covenant Job Tracking App",
     description:
