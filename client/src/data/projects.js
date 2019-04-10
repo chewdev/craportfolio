@@ -1,23 +1,27 @@
 // Large Images
-import budgIt from "../components/imgs/budg-it.jpg";
-import yelpCamp from "../components/imgs/yelp-camp.jpg";
-import indecisionApp from "../components/imgs/indecision-app.jpg";
-import colorGuessingGame from "../components/imgs/color-guessing-game.jpg";
+import portfolioLarge from "../components/imgs/portfolioContact.jpg";
+import covenantLarge from "../components/imgs/covenantDashboardLarge.jpg";
 import devConnectorLarge from "../components/imgs/devConnectorLarge.jpg";
+import budgItLarge from "../components/imgs/budgItLarge.jpg";
+import yelpCampLarge from "../components/imgs/yelpCampLarge.jpg";
+import indecisionAppLarge from "../components/imgs/indecisionAppLarge.jpg";
+import colorGameLarge from "../components/imgs/colorGameLarge.jpg";
 import passion from "../components/imgs/passion.jpg";
 import nowBrewing from "../components/imgs/now-brewing.jpg";
-import portfolio from "../components/imgs/portfolioContact.jpg";
 import liveWorkCreate from "../components/imgs/live-work-create.jpg";
-import covenantLarge from "../components/imgs/covenantDashboardLarge.jpg";
 
 // Small Images
 import portfolioSmall from "../components/imgs/portfolioContactSmall.jpg";
 import covenantSmall from "../components/imgs/covenantDashboardSmall.jpg";
 import devConnectorSmall from "../components/imgs/devConnectorSmall.jpg";
+import budgItSmall from "../components/imgs/budgItSmall.jpg";
+import yelpCampSmall from "../components/imgs/yelpCampSmall.jpg";
+import indecisionAppSmall from "../components/imgs/indecisionAppSmall.jpg";
+import colorGameSmall from "../components/imgs/colorGameSmall.jpg";
 
 const projects = [
   {
-    imgSrc: portfolio,
+    imgSrc: portfolioLarge,
     imgSrcSmall: portfolioSmall,
     alt: "Screenshot of portfolio's contact section",
     title: "Portfolio",
@@ -66,7 +70,8 @@ const projects = [
     channelName: "DCA"
   },
   {
-    imgSrc: budgIt,
+    imgSrc: budgItLarge,
+    imgSrcSmall: budgItSmall,
     alt: "Screenshot of Budg-It project homepage",
     title: "React Budg-It App",
     description:
@@ -76,7 +81,8 @@ const projects = [
     channelName: "RBA"
   },
   {
-    imgSrc: yelpCamp,
+    imgSrc: yelpCampLarge,
+    imgSrcSmall: yelpCampSmall,
     alt: "Screenshot of Yelp Camp project homepage",
     title: "Yelp Camp App",
     description:
@@ -95,7 +101,8 @@ const projects = [
     channelName: "YCA"
   },
   {
-    imgSrc: indecisionApp,
+    imgSrc: indecisionAppLarge,
+    imgSrcSmall: indecisionAppSmall,
     alt: "Screenshot of Indecision App project",
     title: "Indecision App",
     description:
@@ -105,7 +112,8 @@ const projects = [
     channelName: "IDA"
   },
   {
-    imgSrc: colorGuessingGame,
+    imgSrc: colorGameLarge,
+    imgSrcSmall: colorGameSmall,
     alt: "Screenshot of Color Guessing Game project",
     title: "Color Guessing Game",
     description:
