@@ -6,7 +6,7 @@ import budgItLarge from "../components/imgs/budgItLarge.jpg";
 import yelpCampLarge from "../components/imgs/yelpCampLarge.jpg";
 import indecisionAppLarge from "../components/imgs/indecisionAppLarge.jpg";
 import colorGameLarge from "../components/imgs/colorGameLarge.jpg";
-import passion from "../components/imgs/passion.jpg";
+import passionLarge from "../components/imgs/passionLarge.jpg";
 import nowBrewing from "../components/imgs/now-brewing.jpg";
 import liveWorkCreate from "../components/imgs/live-work-create.jpg";
 
@@ -18,6 +18,7 @@ import budgItSmall from "../components/imgs/budgItSmall.jpg";
 import yelpCampSmall from "../components/imgs/yelpCampSmall.jpg";
 import indecisionAppSmall from "../components/imgs/indecisionAppSmall.jpg";
 import colorGameSmall from "../components/imgs/colorGameSmall.jpg";
+import passionSmall from "../components/imgs/passionSmall.jpg";
 
 const projects = [
   {
@@ -132,7 +133,8 @@ const projects = [
     channelName: "CS1"
   },
   {
-    imgSrc: passion,
+    imgSrc: passionLarge,
+    imgSrcSmall: passionSmall,
     alt: '"PASSION LED US HERE" written on the ground',
     title: "Coming Soon",
     description: "Always working on new projects. More to come!",
