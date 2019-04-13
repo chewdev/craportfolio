@@ -10,6 +10,15 @@ import passionLarge from "../components/imgs/passionLarge.jpg";
 import nowBrewing from "../components/imgs/now-brewing.jpg";
 import liveWorkCreate from "../components/imgs/live-work-create.jpg";
 
+// Large 2x Images
+import covenantLarge2x from "../components/imgs/covenantDashboardLarge2x.jpg";
+import devConnectorLarge2x from "../components/imgs/devConnectorLarge2x.jpg";
+import budgItLarge2x from "../components/imgs/budgItLarge2x.jpg";
+import yelpCampLarge2x from "../components/imgs/yelpCampLarge2x.jpg";
+import indecisionAppLarge2x from "../components/imgs/indecisionAppLarge2x.jpg";
+import colorGameLarge2x from "../components/imgs/colorGameLarge2x.jpg";
+import passionLarge2x from "../components/imgs/passionLarge2x.jpg";
+
 // Small Images
 import portfolioSmall from "../components/imgs/portfolioContactSmall.jpg";
 import covenantSmall from "../components/imgs/covenantDashboardSmall.jpg";
@@ -19,6 +28,15 @@ import yelpCampSmall from "../components/imgs/yelpCampSmall.jpg";
 import indecisionAppSmall from "../components/imgs/indecisionAppSmall.jpg";
 import colorGameSmall from "../components/imgs/colorGameSmall.jpg";
 import passionSmall from "../components/imgs/passionSmall.jpg";
+
+// Small 2x Images
+import covenantSmall2x from "../components/imgs/covenantDashboardSmall2x.jpg";
+import devConnectorSmall2x from "../components/imgs/devConnectorSmall2x.jpg";
+import budgItSmall2x from "../components/imgs/budgItSmall2x.jpg";
+import yelpCampSmall2x from "../components/imgs/yelpCampSmall2x.jpg";
+import indecisionAppSmall2x from "../components/imgs/indecisionAppSmall2x.jpg";
+import colorGameSmall2x from "../components/imgs/colorGameSmall2x.jpg";
+import passionSmall2x from "../components/imgs/passionSmall2x.jpg";
 
 const projects = [
   {
@@ -43,6 +61,8 @@ const projects = [
   {
     imgSrc: covenantLarge,
     imgSrcSmall: covenantSmall,
+    imgSrc2x: covenantLarge2x,
+    imgSrcSmall2x: covenantSmall2x,
     alt: "Screenshot of Covenant Job Tracking App",
     title: "Covenant Job Tracking App",
     description:
@@ -62,6 +82,8 @@ const projects = [
   {
     imgSrc: devConnectorLarge,
     imgSrcSmall: devConnectorSmall,
+    imgSrc2x: devConnectorLarge2x,
+    imgSrcSmall2x: devConnectorSmall2x,
     alt: 'Screenshot of Dev Connector App"',
     title: "Dev Connector App",
     description:
@@ -73,6 +95,8 @@ const projects = [
   {
     imgSrc: budgItLarge,
     imgSrcSmall: budgItSmall,
+    imgSrc2x: budgItLarge2x,
+    imgSrcSmall2x: budgItSmall2x,
     alt: "Screenshot of Budg-It project homepage",
     title: "React Budg-It App",
     description:
@@ -84,6 +108,8 @@ const projects = [
   {
     imgSrc: yelpCampLarge,
     imgSrcSmall: yelpCampSmall,
+    imgSrc2x: yelpCampLarge2x,
+    imgSrcSmall2x: yelpCampSmall2x,
     alt: "Screenshot of Yelp Camp project homepage",
     title: "Yelp Camp App",
     description:
@@ -104,6 +130,8 @@ const projects = [
   {
     imgSrc: indecisionAppLarge,
     imgSrcSmall: indecisionAppSmall,
+    imgSrc2x: indecisionAppLarge2x,
+    imgSrcSmall2x: indecisionAppSmall2x,
     alt: "Screenshot of Indecision App project",
     title: "Indecision App",
     description:
@@ -115,6 +143,8 @@ const projects = [
   {
     imgSrc: colorGameLarge,
     imgSrcSmall: colorGameSmall,
+    imgSrc2x: colorGameLarge2x,
+    imgSrcSmall2x: colorGameSmall2x,
     alt: "Screenshot of Color Guessing Game project",
     title: "Color Guessing Game",
     description:
@@ -135,6 +165,8 @@ const projects = [
   {
     imgSrc: passionLarge,
     imgSrcSmall: passionSmall,
+    imgSrc2x: passionLarge2x,
+    imgSrcSmall2x: passionSmall2x,
     alt: '"PASSION LED US HERE" written on the ground',
     title: "Coming Soon",
     description: "Always working on new projects. More to come!",
