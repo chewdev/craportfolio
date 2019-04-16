@@ -48,3 +48,10 @@
     @content;
   }
 }
+
+// Layout Mixins: Flex
+@mixin flexCenterBoth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
