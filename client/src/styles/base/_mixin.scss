@@ -55,3 +55,11 @@
   align-items: center;
   justify-content: center;
 }
+
+// Input Mixins
+@mixin inputBase {
+  width: 100%;
+  letter-spacing: 1px;
+  border: none;
+  font-family: inherit;
+}
