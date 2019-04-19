@@ -47,9 +47,9 @@ class Introduction extends React.Component {
   render() {
     return (
       <PaperBoxLayout>
-        <div className="paper-tape">
-          <div className="paper-tape--left" />
-          <div className="paper-tape--right" />
+        <div className="paper-tape-container">
+          <div className="paper-tape paper-tape--left" />
+          <div className="paper-tape paper-tape--right" />
         </div>
         <Typist
           avgTypingDelay={30}

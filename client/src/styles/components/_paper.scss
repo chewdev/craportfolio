@@ -15,26 +15,25 @@
   height: 22.5rem;
 }
 
-.paper-tape {
+.paper-tape-container {
   margin-top: -2rem;
   display: flex;
   justify-content: space-between;
+}
 
+.paper-tape {
+  width: 1.7rem;
+  height: 3.3rem;
+  background-size: contain;
   &--left {
-    width: 1.7rem;
-    height: 3.3rem;
     animation: moveInTopLeft 2s ease-out;
     margin-left: -3rem;
-    background: url("./imgs/tape-left-cropped-rot.png");
-    background-size: contain;
+    background-image: url("./imgs/tape-left-cropped-rot.png");
   }
 
   &--right {
-    width: 1.7rem;
-    height: 3.3rem;
     animation: moveInTopRight 2s ease-out;
-    background: url("./imgs/tape-right-cropped-rot.png");
-    background-size: contain;
+    background-image: url("./imgs/tape-right-cropped-rot.png");
   }
 }
 
