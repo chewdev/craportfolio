@@ -29,8 +29,7 @@
   }
 }
 
-// move padding to .about-me-container and remove
-.about-me-resize-container {
+.pool-container {
   padding: 5rem $s-size;
   padding-bottom: 2.5rem;
 
@@ -39,7 +38,7 @@
   }
 }
 
-.about-me-container {
+.pool {
   background: $bright-purple;
   border: 0.75rem solid $main-grey;
   border-radius: 1rem;
@@ -49,7 +48,7 @@
   flex-direction: column;
   box-shadow: 0.75rem -0.75rem 0.5rem 0.25rem rgba(0, 0, 0, 0.1);
 
-  h2 {
+  &_header {
     padding: $s-size;
     text-align: center;
     font-size: 1.7rem;
@@ -60,7 +59,7 @@
     color: inherit;
   }
 
-  p {
+  &_text {
     padding: $s-size $m-size;
     font-size: 0.8rem;
     font-weight: 400;
@@ -68,15 +67,15 @@
     letter-spacing: 0.05rem;
     width: 100%;
     color: inherit;
-  }
-}
 
-.about-me-quote {
-  text-align: center;
+    &--quote {
+      text-align: center;
 
-  & em {
-    font-size: 1.25em;
-    color: inherit;
+      & em {
+        font-size: 1.25em;
+        color: inherit;
+      }
+    }
   }
 }
 
