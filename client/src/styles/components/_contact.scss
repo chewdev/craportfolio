@@ -6,10 +6,8 @@
   padding: 3rem 1rem;
   padding-top: calc(10vh + 3rem);
   margin-top: -10vh;
-  display: flex;
+  @include flexCenterBoth;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   background: linear-gradient(rgba($dark-purple, 0.9), rgba($dark-purple, 0.9)),
     url(./imgs/lets-connect-no-lines.svg);
   background-size: cover;
@@ -32,9 +30,6 @@
 }
 
 .contact-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 90%;
   height: 31.5rem;
   margin: 0 auto;
@@ -95,29 +90,14 @@
   }
 
   &-contactinput {
-    width: 100%;
-    border: none;
+    @include inputBase;
     border-bottom: 1px solid currentColor;
     margin-bottom: $m-size;
-    font-family: cursive, "Indie Flower";
     line-height: 1;
     font-size: $m-size;
     padding-left: 0.5rem;
     background: transparent;
     color: inherit;
-    font-family: inherit;
-    letter-spacing: 1px;
-  }
-
-  &-label-error-div {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  &-error {
-    color: red;
-    font-size: 0.7rem;
   }
 
   @mixin commentsBg($fs, $lh) {
@@ -135,13 +115,10 @@
 
   &-comments-area {
     @include commentsBg(13px, 15px);
-    letter-spacing: 1px;
+    @include inputBase;
     resize: none;
-    width: 100%;
-    border: none;
     overflow: auto;
     margin-bottom: 0.8rem;
-    font-family: inherit;
 
     @include atPhoneLg {
       @include commentsBg(16px, 19px);
@@ -150,6 +127,17 @@
     @include atTablet {
       @include commentsBg(19px, 24px);
     }
+  }
+
+  &-label-error-div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &-error {
+    color: red;
+    font-size: 0.7rem;
   }
 
   &-submit {

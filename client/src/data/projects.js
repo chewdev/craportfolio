@@ -53,10 +53,10 @@ const projects = [
       "JavaScript",
       "HTML5",
       "CSS3",
-      "MySQL"
+      "MySQL",
     ],
     link: "/",
-    channelName: "CEP"
+    channelName: "CEP",
   },
   {
     imgSrc: covenantLarge,
@@ -74,10 +74,10 @@ const projects = [
       "Express",
       "MongoDB",
       "Bootstrap",
-      "Google API"
+      "Google API",
     ],
     link: "https://lit-spire-35756.herokuapp.com/",
-    channelName: "CJT"
+    channelName: "CJT",
   },
   {
     imgSrc: devConnectorLarge,
@@ -90,7 +90,7 @@ const projects = [
       "Dev connector is a full stack application utilizing the MERN stack. Built in Node with Express, the API backend connects the MongoDB database to the frontend React app. Application level state is held in the Redux store. This SPA utilizes React Router for smooth and fast page transitions. Bootstrap styling smooths out the frontend. This application was built following a course based on the MERN stack by Brad Traversy on Udemy and was extended by me, including fixing issues found while building it.",
     tools: ["React", "Redux", "Node", "Express", "MongoDB", "Bootstrap"],
     link: "https://tranquil-tundra-60568.herokuapp.com/",
-    channelName: "DCA"
+    channelName: "DCA",
   },
   {
     imgSrc: budgItLarge,
@@ -103,7 +103,7 @@ const projects = [
       "Budg-It App is an application allowing users to input expenses and incomes to help determine a budget. Users can login using Google Auth from Firebase in order to store their data in the database and access it later. Redux was used to hold application state in React. Built upon existing skills while building this app including: testing with Jest and Enzyme, working with webpack, using Sass CSS preprocessor, BEM CSS convention, using Firebase, deploying to Heroku and much more. This application was built following a course based on React on Udemy by Andrew Mead. I extended the app to include both incomes and expenses instead of just expenses, added an option to use app without login, changed the styling, and more.",
     tools: ["React", "Redux", "Firebase", "JavaScript (ES6)", "HTML5", "CSS3"],
     link: "https://react-budg-it.herokuapp.com",
-    channelName: "RBA"
+    channelName: "RBA",
   },
   {
     imgSrc: yelpCampLarge,
@@ -122,10 +122,10 @@ const projects = [
       "HTML5",
       "CSS3",
       "Passport",
-      "Mongoose"
+      "Mongoose",
     ],
-    link: "https://polar-ridge-72654.herokuapp.com",
-    channelName: "YCA"
+    link: "https://chewdevcamp.herokuapp.com",
+    channelName: "YCA",
   },
   {
     imgSrc: indecisionAppLarge,
@@ -138,7 +138,7 @@ const projects = [
       "Indecision App is a simple CRUD application that allows a user to add and remove items to a list. User can then allow the app to make a decision for them. This app was built as a basic intro to React and practicing the implementation of Local Storage.",
     tools: ["React", "JavaScript", "HTML5", "CSS3"],
     link: "https://github.com/chewdev/react-indecision-app",
-    channelName: "IDA"
+    channelName: "IDA",
   },
   {
     imgSrc: colorGameLarge,
@@ -151,7 +151,7 @@ const projects = [
       "Color guessing game is a simple game for practicing your RGB colors. Built with Vanilla JavaScript, HTML and CSS with Bootstrap.",
     tools: ["Bootstrap", "JavaScript", "HTML5", "CSS3"],
     link: "https://github.com/chewdev/color-game",
-    channelName: "CGG"
+    channelName: "CGG",
   },
   {
     imgSrc: nowBrewing,
@@ -160,7 +160,7 @@ const projects = [
     description: "Always working on new projects. More to come!",
     tools: [],
     link: "#",
-    channelName: "CS1"
+    channelName: "CS1",
   },
   {
     imgSrc: passionLarge,
@@ -172,7 +172,7 @@ const projects = [
     description: "Always working on new projects. More to come!",
     tools: [],
     link: "#",
-    channelName: "CS3"
+    channelName: "CS3",
   },
   {
     imgSrc: liveWorkCreate,
@@ -181,8 +181,8 @@ const projects = [
     description: "Always working on new projects. More to come!",
     tools: [],
     link: "#",
-    channelName: "CS4"
-  }
+    channelName: "CS4",
+  },
 ];
 
 export default projects;

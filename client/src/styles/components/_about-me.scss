@@ -29,31 +29,26 @@
   }
 }
 
-.about-me-resize-container {
+.pool-container {
   padding: 5rem $s-size;
   padding-bottom: 2.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   @include atDesktop {
     padding-bottom: 5rem;
   }
 }
 
-.about-me-container {
+.pool {
   background: $bright-purple;
   border: 0.75rem solid $main-grey;
   border-radius: 1rem;
   color: $black;
   width: 17.5rem;
-  display: flex;
+  @include flexCenterBoth;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   box-shadow: 0.75rem -0.75rem 0.5rem 0.25rem rgba(0, 0, 0, 0.1);
 
-  h2 {
+  &_header {
     padding: $s-size;
     text-align: center;
     font-size: 1.7rem;
@@ -64,7 +59,7 @@
     color: inherit;
   }
 
-  p {
+  &_text {
     padding: $s-size $m-size;
     font-size: 0.8rem;
     font-weight: 400;
@@ -72,15 +67,15 @@
     letter-spacing: 0.05rem;
     width: 100%;
     color: inherit;
-  }
-}
 
-.about-me-quote {
-  text-align: center;
+    &--quote {
+      text-align: center;
 
-  & em {
-    font-size: 1.25em;
-    color: inherit;
+      & em {
+        font-size: 1.25em;
+        color: inherit;
+      }
+    }
   }
 }
 
@@ -88,10 +83,8 @@
   background: $main-grey;
   border-radius: 2rem;
   width: 17.5rem;
-  display: flex;
+  @include flexCenterBoth;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   box-shadow: 0.75rem -0.75rem 0.5rem 0.25rem rgba(0, 0, 0, 0.15);
 
   h2 {
@@ -111,10 +104,8 @@
 .about-me__chair-table-container {
   padding: 5rem 0.6rem;
   padding-top: 2.5rem;
-  display: flex;
+  @include flexCenterBoth;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 
   @include atDesktop {
     padding-top: 5rem;
@@ -171,9 +162,7 @@
   border-top-width: 4em;
   border-bottom-width: 4em;
   border-radius: 2.4em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexCenterBoth;
   transform: rotate(90deg);
 }
 

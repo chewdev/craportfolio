@@ -2,10 +2,10 @@ import React from "react";
 
 export default function AboutMePool() {
   return (
-    <div className="about-me-resize-container">
-      <div className="about-me-container">
-        <h2 className="about-me-header">About Me</h2>
-        <p>
+    <div className="pool-container">
+      <div className="pool">
+        <h2 className="pool_header">About Me</h2>
+        <p className="pool_text">
           &nbsp;&nbsp;&nbsp;&nbsp; I'm Chris, a full-stack web developer living
           in Los Angeles, CA. Having graduated with a degree in Mechanical
           Engineering, I have always enjoyed solving difficult technical
@@ -18,7 +18,7 @@ export default function AboutMePool() {
           especially baseball (Let's Go Dodgers!), and traveling.
           <br />
         </p>
-        <p className="about-me-quote">
+        <p className="pool_text pool_text--quote">
           <em>Easy is boring, let's have some fun!</em>
         </p>
       </div>
