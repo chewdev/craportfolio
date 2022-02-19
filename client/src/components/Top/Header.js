@@ -86,7 +86,7 @@ class Header extends React.Component {
                 headerTapeType={headerTapeLeft}
                 headerTitleClasses={headerTitleClasses}
                 text={"Contact"}
-                href={"#contact"}
+                href={"#contact-form"}
               />
               <NavItem
                 headerTapeType={headerTapeMiddle}

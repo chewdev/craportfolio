@@ -1,5 +1,4 @@
 import React from "react";
-import LazyLoad from "react-lazy-load";
 import { isEmail } from "validator";
 import axios from "axios";
 import SuccessfulSubmit from "./SuccessfulSubmit";
@@ -123,9 +122,8 @@ export default class Contact extends React.Component {
           submitError={this.state.submitError}
           contactError={this.state.contactError}
         />
-        <LazyLoad offset={600} throttle={25}>
-          <>
-            <div className={`contact-form`}>
+          <div className={'contact-form-container'}>
+            <div id="contact-form" className={`contact-form`}>
               <SuccessfulSubmit submitted={this.state.submitted} />
               <form
                 className={`contact-form-form ${this.state.formClass}`}
@@ -175,8 +173,7 @@ export default class Contact extends React.Component {
               </form>
             </div>
             <WhiteboardBottom />
-          </>
-        </LazyLoad>
+          </div>
       </section>
     );
   }

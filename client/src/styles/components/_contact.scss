@@ -13,16 +13,11 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
 
-  .is-visible {
-    width: 100%;
-    max-width: 600px;
-  }
-
-  //Set min-height for when section has not yet been lazy loaded
-  @include atPhoneLg {
-    min-height: 43rem;
-  }
+.contact-form-container {
+  width: 100%;
+  max-width: 600px;
 }
 
 .contact-error {
@@ -103,8 +98,8 @@
   @mixin commentsBg($fs, $lh) {
     background: repeating-linear-gradient(
       $main-grey,
-      $main-grey $lh - 1px,
-      $dark-purple $lh - 1px,
+      $main-grey $lh - 2px,
+      $dark-purple $lh - 2px,
       $dark-purple $lh
     );
     font-size: $fs;
@@ -150,11 +145,12 @@
     transition: transform 0.3s;
 
     &:hover {
-      transform: scale(1.1);
+      color: $bright-purple;
     }
 
     .email-icon {
       font-size: 1.8rem;
+      color: inherit;
     }
   }
 }
