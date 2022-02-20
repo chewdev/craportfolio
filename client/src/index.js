@@ -1,5 +1,5 @@
 import "react-app-polyfill/ie9";
-import "core-js/es7/array";
+import "core-js/es/array";
 import React from "react";
 import ReactDOM from "react-dom";
 import AppRouter from "./routers/AppRouter";

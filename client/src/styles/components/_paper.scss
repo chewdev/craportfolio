@@ -2,7 +2,7 @@
   font-family: "Indie Flower", cursive;
   width: 17.5rem;
   height: 30rem;
-  background: url("./imgs/notebook-page-transparent.jpg");
+  background: url("../imgs/notebook-page-transparent.jpg");
   background-size: cover;
   border-radius: 5px;
   animation: fadeIn 1s ease-out;
@@ -28,12 +28,12 @@
   &--left {
     animation: moveInTopLeft 2s ease-out;
     margin-left: -3rem;
-    background-image: url("./imgs/tape-left-cropped-rot.png");
+    background-image: url("../imgs/tape-left-cropped-rot.png");
   }
 
   &--right {
     animation: moveInTopRight 2s ease-out;
-    background-image: url("./imgs/tape-right-cropped-rot.png");
+    background-image: url("../imgs/tape-right-cropped-rot.png");
   }
 }
 
