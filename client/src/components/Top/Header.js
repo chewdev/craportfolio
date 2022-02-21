@@ -22,9 +22,11 @@ class Header extends React.Component {
     if (!this.eventAdded) {
       window.addEventListener("scroll", this.onScroll);
       this.eventAdded = true;
-      const that = this;
+      const setHasAnimated = () => {this.setState({hasAnimated: true})};
+      const setHideClass = () => {this.setState({hideClass: "header__title_hide"})};
       setTimeout(() => {
-        that.setState({ hideClass: "header__title_hide", hasAnimated: true });
+        setHasAnimated();
+        setHideClass();
       }, 2500);
     }
   }
