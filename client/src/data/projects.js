@@ -89,7 +89,7 @@ const projects = [
     description:
       "Dev connector is a full stack application utilizing the MERN stack. Built in Node with Express, the API backend connects the MongoDB database to the frontend React app. Application level state is held in the Redux store. This SPA utilizes React Router for smooth and fast page transitions. Bootstrap styling smooths out the frontend. This application was built following a course based on the MERN stack by Brad Traversy on Udemy and was extended by me, including fixing issues found while building it.",
     tools: ["React", "Redux", "Node", "Express", "MongoDB", "Bootstrap"],
-    link: "https://tranquil-tundra-60568.herokuapp.com/",
+    link: "https://chewdevconnector.herokuapp.com/",
     channelName: "DCA",
   },
   {
