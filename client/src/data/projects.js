@@ -102,7 +102,7 @@ const projects = [
     description:
       "Budg-It App is an application allowing users to input expenses and incomes to help determine a budget. Users can login using Google Auth from Firebase in order to store their data in the database and access it later. Redux was used to hold application state in React. Built upon existing skills while building this app including: testing with Jest and Enzyme, working with webpack, using Sass CSS preprocessor, BEM CSS convention, using Firebase, deploying to Heroku and much more. This application was built following a course based on React on Udemy by Andrew Mead. I extended the app to include both incomes and expenses instead of just expenses, added an option to use app without login, changed the styling, and more.",
     tools: ["React", "Redux", "Firebase", "JavaScript (ES6)", "HTML5", "CSS3"],
-    link: "https://react-budg-it.herokuapp.com",
+    link: "https://chewdevbudgit.herokuapp.com/",
     channelName: "RBA",
   },
   {
